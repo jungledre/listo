@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @page = "event"
 
   end
 
