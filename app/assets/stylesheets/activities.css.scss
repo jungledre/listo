@@ -1,3 +1,98 @@
 // Place all the styles related to the activities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$offwhite: #ecf0f1;
+$darkpurple: #8e44ad;
+$halfpurple: rgba(142, 68, 173,.5);
+$belize: rgba(41, 128, 185,1.0);
+
+
+#activities {
+  h1 {
+    font-size: 7vw;
+    text-shadow: 4px 2px 0px #222;
+    font-weight: 700;
+    color: $offwhite;
+    margin: 60px auto 40px;
+  }
+  p.subhead {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .act-wrapper {
+
+    a {
+      display:block;
+      float: left;
+      width: 30%;
+      height: 0;
+      margin-right: 4.5%;
+      padding-bottom: 30%;
+      color: $offwhite;
+
+      .act-box {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 0;
+        //margin-right: 4.5%;
+        padding-bottom: 100%;
+        -webkit-border-radius: 50% 50% 0 50%;
+        -moz-border-radius: 50% 50% 0 50%;
+        border-radius: 50% 50% 0 50%;
+        transform: rotate(45deg);
+        border: 6px solid $offwhite;
+
+        .act-inner {
+          position: absolute;
+          top: 100px;
+          left: 60px;
+          transform: rotate(-45deg);
+          @media screen and (max-width: 600px) {
+            //display: none;
+          }
+        }
+      }
+      .act-box:hover {
+        border: 6px solid $offwhite;
+        box-shadow: 8px 0 0 #333;
+      }
+      @media screen and (max-width: 440px) {
+        width: 60%;
+        margin: 20px auto 60%;
+        display: block;
+        float: none;
+      }
+    }
+    a:last-child {
+      margin-right: 0;
+      @media screen and (max-width: 440px) {
+        margin: 20px auto 20%;
+      }
+    }
+  }
+  .btn {
+    display: inline-block;
+    background: none;
+    border: 1px solid #333;
+    margin: 90px auto 50px;
+    font-size: 18px;
+    padding:8px 20px;
+    color: #333;
+    width: auto;
+  }
+  .btn:hover {
+    background: $halfpurple;
+  }
+
+} /* #activities */
+
+@media screen and (max-width: 770px) {
+
+
+   #activities h1 {
+    font-size: 8.5vw;
+   }
+
+}
