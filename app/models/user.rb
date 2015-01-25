@@ -6,4 +6,24 @@ class User < ActiveRecord::Base
   has_many :narks, class_name: "Flake", foreign_key: "nark_id"
   has_many :flags, foreign_key: "flagged_id"
   has_many :reports, class_name: "Flag", foreign_key: "reporter_id"
+
+  validates :first_name, presence: true,
+    length: {
+      maximum: 40
+    }
+  validates :last_name, presence: true
+    length: {
+      maximum: 40
+    }
+  validates :email, presence: true,
+    uniqueness: true,
+    :email => true
+  validates :password_digest,
+    presence: true,
+    confirmation: true,
+    length: {
+      minimum: 5,
+      maximum: 1000
+    }
+  validates :location, presence: true
 end
