@@ -21,12 +21,12 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
     uniqueness: true,
     :email => true
-  validates :password_digest,
-    presence: true,
-    confirmation: true,
+  validates :password,
     length: {
       minimum: 5,
       maximum: 1000
     }
-  validates :location, presence: true
+
+  validates_confirmation_of :password, on: :create
+  validates_presence_of :password_confirmation
 end
