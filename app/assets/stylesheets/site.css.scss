@@ -1,3 +1,152 @@
 // Place all the styles related to the site controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$offwhite: #ecf0f1;
+$darkpurple: #8e44ad;
+$halfpurple: rgba(142, 68, 173,.5);
+$belize: rgba(41, 128, 185,1.0);
+
+
+/* == video background == */
+.video-wrapper {
+  width: 100%;
+  height: 560px;
+  z-index: -100;
+  position: relative;
+  overflow: hidden;
+  @media screen and (max-width: 770px) {
+    height: 360px;
+  }
+}
+
+.video-playing {
+  position: absolute;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 560px;
+}
+
+
+header {
+  width:100%;
+  background: $offwhite;
+
+  .branding {
+    float: left;
+    padding: 10px 0;
+  }
+  nav ul {
+    float: right;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+  }
+  nav ul > li {
+    float: left;
+    padding: 0 20px ;
+  }
+  .link {
+    border: none;
+    background: none;
+  }
+  a, .link{
+    color: $darkpurple;
+    line-height: 100%;
+  }
+  a:hover{
+    color: $darkpurple;
+  }
+} /* header */
+
+#home {
+  header {
+    background: none;
+    position: absolute;
+  }
+  main {
+    background: none;
+  }
+  header {
+    @media screen and (max-width: 770px) {
+      background: $offwhite;
+    }
+  }
+  header a, header .link, header a:hover{
+    color: $offwhite;
+    @media screen and (max-width: 770px) {
+      color: $darkpurple;
+    }
+  }
+  .content-wrapper {
+    margin-top: -560px;
+    padding-top: 40px;
+    @media screen and (max-width: 770px) {
+      margin-top: -360px;
+    }
+  }
+  .content {
+    min-height: 600px;
+  }
+} /* #home */
+
+
+
+.intro-wrapper {
+  color: $offwhite;
+  padding-top: 120px;
+  @media screen and (max-width: 770px) {
+    color: $offwhite;
+    height: 360px;
+    padding-top: 80px;
+  }
+  h1 {
+    font-size: 7vw;
+    text-shadow: 2px 2px 6px #222;
+    font-weight: 700;
+    @media screen and (max-width: 770px) {
+      font-size: 8.5vw;
+    }
+  }
+  p {
+    font-size: 2vw;
+    @media screen and (max-width: 770px) {
+      display: none;
+    }
+  }
+  .btn {
+    display: inline-block;
+    background: none;
+    border: 2px solid $offwhite;
+    margin: 100px auto 40px;
+    font-size: 22px;
+    padding:8px 20px;
+    color: $offwhite;
+    width: auto;
+    @media screen and (max-width: 770px) {
+      margin: 50px auto 40px;
+      font-size: 18px;
+    }
+  }
+  .btn:hover {
+    background: $halfpurple;
+    color: $offwhite;
+  }
+} /* .intro-wrapper */
+
+
+main {
+  background: $belize;
+  min-height: 600px;
+}
+
+footer {
+  background: #222;
+  min-height: 200px;
+}
+
+
+.modal-backdrop.in {
+filter: alpha(opacity=80);
+opacity: 0.8;
+}

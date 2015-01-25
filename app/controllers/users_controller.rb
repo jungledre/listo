@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @page = "bio"
 
   end
 
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
   end
 
   def dashboard
+    @page = "dashboard"
 
   end
 

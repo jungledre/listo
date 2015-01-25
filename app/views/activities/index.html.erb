@@ -1,0 +1,44 @@
+<section class="container">
+  <div class="row text-center">
+    <h1 class="tk-brandon-grotesque">I WANT TO GO</h1>
+
+    <% if !true %> <!-- check if @current_user.location is set -->
+      <div class="col-md-4 col-md-offset-4">
+        <p class="subhead tk-bello-pro">Where?</p>
+        <%= bootstrap_form_for @user do |f| %>
+          <% f.select :location, [['foursquare-val', 'Near By'],['foursquare-val', 'Neighborhood One'],['foursquare-val', 'Neighborhood Two']], hide_label: :true %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="col-md-8 col-md-offset-2">
+        <p class="subhead tk-bello-pro">Do What?</p>
+
+        <section class="act-wrapper clearfix">
+          <a href="#">
+            <div class="act-box">
+              <div class="act-inner"><span>Grab A Drink</span></div>
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="act-box">
+              <div class="act-inner"><span>Get A Coffee</span></div>
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="act-box">
+              <div class="act-inner"><span>Take A Walk</span></div>
+            </div>
+          </a>
+        </section>
+
+        <button class="btn">Something Else</button>
+
+      </div>
+
+
+    <% end %>
+
+  </div>
+</section>

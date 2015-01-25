@@ -40,3 +40,5 @@ gem 'cloudinary'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# bootstrap form styles
+gem 'bootstrap_form'

@@ -1,0 +1,32 @@
+<div class="video-wrapper">
+  <video autoplay loop loop="loop" preload="auto" id="pretzel-video" class="video-playing">
+    <source src="videos/listo-video-back1.mp4" type="video/mp4">
+  </video>
+  <div class="learn-more"></div>
+</div>
+
+<section class="container content-wrapper">
+
+  <div class="row intro-wrapper text-center">
+    <div class="col-md-10 col-md-offset-1">
+      <h1 class="tk-brandon-grotesque">ARE YOU READY ?</h1>
+      <p>Join others in your neighborhood for activites around town.</p>
+
+      <% if true %> <!-- show signup button if not logged in -->
+      <button class="btn" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row content">
+
+  </div>
+
+
+
+
+</section>
+
+<%= render 'site/signupmodal'%>
+
+<%= render 'site/loginmodal'%>
