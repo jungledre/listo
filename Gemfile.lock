@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bcrypt (3.1.9)
     bootstrap_form (2.2.0)
     builder (3.2.2)
     coffee-rails (4.0.1)
@@ -37,6 +38,8 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
+    email_validator (1.5.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.2.2)
     hike (1.2.3)
@@ -109,8 +112,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootstrap_form
   coffee-rails (~> 4.0.0)
+  email_validator
   jbuilder (~> 2.0)
   jquery-rails
   pg
