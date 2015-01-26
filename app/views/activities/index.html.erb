@@ -6,7 +6,7 @@
     <!-- check if @current_user.location is set -->
     <h1 class="tk-brandon-grotesque">WHERE ARE YOU?</h1>
       <div class="col-md-4 col-md-offset-4">
-        <p class="subhead tk-bello-pro">Choose a nieghborhood:</p>
+        <p class="subhead tk-bello-pro">Choose nieghborhood:</p>
         <%= bootstrap_form_for @user do |f| %>
           <%= f.select :location, [
             ['Ballard', 'Ballard, Seattle, WA'],
@@ -27,13 +27,13 @@
             ['University District', 'University District, Seattle, WA'],
             ['Wallingford', 'Wallingford, Seattle, WA']
             ], hide_label: :true %>
-          <%= f.submit %>
+          <%= f.submit 'Save'%>
         <% end %>
       </div>
     <% else %>
       <h1 class="tk-brandon-grotesque">I WANT TO GO</h1>
       <div class="col-md-8 col-md-offset-2">
-        <!-- <p class="subhead tk-bello-pro">Do What?</p> -->
+        <p class="subhead tk-bello-pro">Choose Activity:</p>
 
         <section class="act-wrapper clearfix">
           <a href="#">
@@ -58,7 +58,7 @@
         <button class="btn">Something Else</button>
 
       <% location = @user.location.split(",")[0]  %>
-      <p class="subhead tk-bello-pro">In <%= link_to location, location_path(@user.id),class: "location-change", title: "Change Location" %></p>
+      <p class="subhead tk-bello-pro">In: <%= link_to location, location_path(@user.id),class: "location-change", title: "Change Location" %></p>
 
 
       </div>
