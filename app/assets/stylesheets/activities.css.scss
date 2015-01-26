@@ -81,5 +81,12 @@ $belize: rgba(41, 128, 185,1.0);
   .btn:hover {
     background: $halfpurple;
   }
+  .location-change {
+    color: #333;
+  }
+  .location-change:hover {
+    color: $offwhite;
+    text-decoration: none;
+  }
 
 } /* #activities */
