@@ -11,8 +11,8 @@ class EventsController < ApplicationController
 
   def show
     @page = 'event'
-
-    params = {  near: 'Ballard wa',
+    @user = current_user
+    params = {  near: 'ballard wa',
                 query: 'coffee',
                 price: '1,2',
                 client_id: ENV['FOURSQUARE_KEY'],
