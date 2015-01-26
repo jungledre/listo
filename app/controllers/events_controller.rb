@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+  before_action :is_authenticated?
+
   require 'open-uri'
   require 'json'
 
@@ -10,7 +12,7 @@ class EventsController < ApplicationController
   def show
     @page = 'event'
 
-    params = {  near: 'ballard wa',
+    params = {  near: 'Ballard wa',
                 query: 'coffee',
                 price: '1,2',
                 client_id: ENV['FOURSQUARE_KEY'],
