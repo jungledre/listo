@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
     length: {
       maximum: 40
     }
-  validates :last_name, presence: true
+  validates :last_name, presence: true,
     length: {
       maximum: 40
     }
