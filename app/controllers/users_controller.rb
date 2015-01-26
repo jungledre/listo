@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def show
     @page = "bio"
+    @user = current_user
 
   end
 

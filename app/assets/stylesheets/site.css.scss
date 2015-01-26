@@ -66,6 +66,7 @@ header {
   }
   main {
     background: none;
+    padding-top: 0;
   }
   header {
     @media screen and (max-width: 770px) {
@@ -90,11 +91,18 @@ header {
   }
 } /* #home */
 
+#faq {
+  main {
+    li {
+      margin-bottom: 20px;
+    }
+  }
 
+}
 
 .intro-wrapper {
   color: $offwhite;
-  padding-top: 120px;
+  padding-top: 100px;
   @media screen and (max-width: 770px) {
     color: $offwhite;
     height: 360px;
@@ -138,11 +146,47 @@ header {
 main {
   background: $belize;
   min-height: 600px;
+  padding: 40px 0 20px;
+  .alert {
+    position: absolute;
+    top: 50px;
+  }
+  h1 {
+    font-size: 7vw;
+    text-shadow: 4px 2px 0px #222;
+    font-weight: 700;
+    color: $offwhite;
+    margin-bottom:40px;
+    @media screen and (max-width: 770px) {
+      font-size: 8.5vw;
+    }
+  }
+
 }
 
 footer {
   background: #222;
   min-height: 200px;
+  padding-top:30px;
+  padding-bottom: 20px;
+  color: $offwhite;
+  h5 {
+    font-size: 16px;
+  }
+  ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+    li {
+    font-size: 14px;
+      a {
+        color:$offwhite;
+      }
+      a:hover {
+        color:$offwhite;
+      }
+    }
+  }
 }
 
 
