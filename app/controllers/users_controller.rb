@@ -17,8 +17,7 @@ class UsersController < ApplicationController
   end
 
   def create_img
-    # Server Upload
-    Cloudinary::Uploader.upload(params[:image], :public_id => params[:id])
+
   end
 
   def show
@@ -32,12 +31,16 @@ class UsersController < ApplicationController
   end
 
   def update
-
+    current_user
     @user = User.find(params[:id])
-    if @user.update_attribute(:location, params[:user][:location])
-      redirect_to activities_path
-    end
 
+    uploaded_file_path = params[:user][:image].path
+    # Server Upload
+    result = Cloudinary::Uploader.upload(uploaded_file_path, {:public_id => "user_"+params[:id],:invalidate => true})
+
+    @user.update_attribute(:bio, params[:user][:bio])
+
+    redirect_to dashboard_path
   end
 
   def destroy
