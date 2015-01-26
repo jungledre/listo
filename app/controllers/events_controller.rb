@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   def show
     @page = 'event'
     @user = current_user
+    @activity = "Grab A Drink"
     @places = Foursquare.get_places 'Ballard wa', 'coffee'
     @place = @places[rand(0..@places.length)]['venue']
     @place_name = @place['name']
