@@ -1,5 +1,7 @@
 class EventsController < ApplicationController
 
+  before_action :is_authenticated?
+
   require 'open-uri'
   require 'json'
 
