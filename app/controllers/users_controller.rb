@@ -30,13 +30,19 @@ class UsersController < ApplicationController
     current_user
     @user = User.find(params[:id])
 
-    uploaded_file_path = params[:user][:image].path
-    # Server Upload
-    result = Cloudinary::Uploader.upload(uploaded_file_path, {:public_id => "user_"+params[:id],:invalidate => true})
+    if @user.update_attribute(:location, params[:user][:location])
+      redirect_to activities_path
+    end
 
-    @user.update_attribute(:bio, params[:user][:bio])
+    if params[:user][:image]
+      uploaded_file_path = params[:user][:image].path
+      # Server Upload
+      result = Cloudinary::Uploader.upload(uploaded_file_path, {:public_id => "user_"+params[:id],:invalidate => true})
 
-    redirect_to dashboard_path
+      @user.update_attribute(:bio, params[:user][:bio])
+      redirect_to dashboard_path
+    end
+
   end
 
   def location_change
