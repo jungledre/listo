@@ -27,6 +27,7 @@
       <ul>
         <% if @user.id == nil  %> <!-- check if user is logged in -->
           <li><button class="link" data-toggle="modal" data-target="#login-modal">Log In</button></li>
+
         <% else %>
           <li><%= link_to 'Dashboard', dashboard_path(@user.id) %></li>
           <li><%= link_to 'Activities', activities_path %></li>
@@ -42,7 +43,31 @@
 <%= yield %>
 </main>
 
-<footer></footer>
+<footer>
+  <section class="container">
+
+
+    <div class="col-xs-6 col-md-1 col-md-offset-4">
+      <h5>Company</h5>
+        <ul>
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'FAQ', faq_path %></li>
+        </ul>
+    </div>
+    <div class="col-xs-6 col-md-2 col-md-offset-2">
+      <h5>Dev Team</h5>
+      <ul>
+        <li><%= link_to 'Adrienne Kerr'%></li>
+        <li><%= link_to 'Alexander Monsanto'%></li>
+        <li><%= link_to 'Alyssa Williams'%></li>
+        <li><%= link_to 'Patrick Moore'%></li>
+      </ul>
+    </div>
+
+
+  </section>
+
+</footer>
 
 </body>
 </html>
