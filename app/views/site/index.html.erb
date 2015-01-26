@@ -12,7 +12,7 @@
       <h1 class="tk-brandon-grotesque">ARE YOU READY ?</h1>
       <p>Join others in your neighborhood for activites around town.</p>
 
-      <% if true %> <!-- show signup button if not logged in -->
+      <% if @user.id == nil %> <!-- show signup button if not logged in -->
       <button class="btn" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
       <% end %>
     </div>

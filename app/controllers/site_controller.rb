@@ -2,7 +2,7 @@ class SiteController < ApplicationController
 
   def index
     @page = "home"
-    @user = User.new
+    @user = current_user ? current_user : User.new
 
   end
 
