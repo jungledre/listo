@@ -16,10 +16,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def create_img
-
-  end
-
   def show
     @page = "bio"
     @user = current_user
