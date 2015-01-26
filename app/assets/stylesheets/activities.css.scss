@@ -12,10 +12,6 @@ $belize: rgba(41, 128, 185,1.0);
   h1 {
     margin: 20px auto 40px;
   }
-  p.subhead {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
   .act-wrapper {
 
     a {
@@ -82,10 +78,10 @@ $belize: rgba(41, 128, 185,1.0);
     background: $halfpurple;
   }
   .location-change {
-    color: #333;
+    color: $offwhite;
   }
   .location-change:hover {
-    color: $offwhite;
+    text-shadow: 2px 1px 0 #333;
     text-decoration: none;
   }
 
