@@ -9,7 +9,7 @@ class EventsController < ApplicationController
 
   def show
     @page = 'event'
-
+    @user = current_user
     params = {  near: 'ballard wa',
                 query: 'coffee',
                 price: '1,2',

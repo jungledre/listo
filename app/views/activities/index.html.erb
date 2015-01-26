@@ -36,6 +36,10 @@
 
         <button class="btn">Something Else</button>
 
+      <% location = @user.location.split("+")[0]  %>
+      <p class="subhead tk-bello-pro">In <%= link_to location, location_path(@user.id),class: "location-change", title: "Change Location" %></p>
+
+
       </div>
 
 
