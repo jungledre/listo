@@ -43,6 +43,15 @@ class UsersController < ApplicationController
     redirect_to dashboard_path
   end
 
+  def location_change
+
+    @user = User.find(params[:id])
+    if @user.update_attribute(:location, ' ' )
+      redirect_to activities_path
+    end
+
+  end
+
   def destroy
 
   end

@@ -5,6 +5,6 @@ class ActivitiesController < ApplicationController
   def index
     @page = "activities"
     @user = current_user
+    @activities = Activity.all.order("RANDOM()").limit(3) 
   end
-
 end

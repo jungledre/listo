@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'users/:id/dashboard' => 'users#dashboard', as: :dashboard
   post 'users/:id/flag' => 'users#flag', as: :flag
+  get 'users/:id/location' => 'users#location_change', as: :location
 
   post 'events' => 'events#create'
   get 'events/:id' => 'events#show'

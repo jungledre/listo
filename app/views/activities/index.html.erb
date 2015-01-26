@@ -1,40 +1,65 @@
 <section class="container">
   <div class="row text-center">
-    <h1 class="tk-brandon-grotesque">I WANT TO GO</h1>
 
-    <% if !@user.location %> <!-- check if @current_user.location is set -->
+
+    <% if !@user.location || @user.location === ' ' %>
+    <!-- check if @current_user.location is set -->
+    <h1 class="tk-brandon-grotesque">WHERE ARE YOU?</h1>
       <div class="col-md-4 col-md-offset-4">
-        <p class="subhead tk-bello-pro">Where?</p>
+        <p class="subhead tk-bello-pro">Choose a nieghborhood:</p>
         <%= bootstrap_form_for @user do |f| %>
-          <%= f.select :location, [['Near By', 'foursquare-val-1'],['Neighborhood One', 'foursquare-val-2'],['Neighborhood Two', 'foursquare-val-3']], hide_label: :true %>
+          <%= f.select :location, [
+            ['Ballard', 'Ballard, Seattle, WA'],
+            ['Belltown', 'Belltown, Seattle, WA'],
+            ['Capitol Hill', 'Capitol Hill, Seattle, WA'],
+            ['Central District', 'Central District, Seattle, WA'],
+            ['Eastlake', 'Eastlake, Seattle, WA'],
+            ['First Hill', 'First Hill, Seattle, WA'],
+            ['Fremont', 'Fremont, Seattle, WA'],
+            ['Green Lake', 'Green Lake, Seattle, WA'],
+            ['International District', 'International District, Seattle, WA'],
+            ['Pioneer Square', 'Pioneer Square, Seattle, WA'],
+            ['Phinney Ridge', 'Phinney Ridge, Seattle, WA'],
+            ['Queen Anne', 'Queen Anne, Seattle, WA'],
+            ['Ravenna', 'Ravenna, Seattle, WA'],
+            ['South Lake Union', 'South Lake Union, Seattle, WA'],
+            ['South Seattle', 'South Seattle, Seattle, WA'],
+            ['University District', 'University District, Seattle, WA'],
+            ['Wallingford', 'Wallingford, Seattle, WA']
+            ], hide_label: :true %>
           <%= f.submit %>
         <% end %>
       </div>
     <% else %>
+      <h1 class="tk-brandon-grotesque">I WANT TO GO</h1>
       <div class="col-md-8 col-md-offset-2">
-        <p class="subhead tk-bello-pro">Do What?</p>
+        <!-- <p class="subhead tk-bello-pro">Do What?</p> -->
 
         <section class="act-wrapper clearfix">
           <a href="#">
             <div class="act-box">
-              <div class="act-inner"><span>Grab A Drink</span></div>
+              <div class="act-inner"><span><%=@activities[0].name%></span></div>
             </div>
           </a>
 
           <a href="#">
             <div class="act-box">
-              <div class="act-inner"><span>Get A Coffee</span></div>
+              <div class="act-inner"><span><%=@activities[1].name%></span></div>
             </div>
           </a>
 
           <a href="#">
             <div class="act-box">
-              <div class="act-inner"><span>Take A Walk</span></div>
+              <div class="act-inner"><span><%=@activities[2].name%></span></div>
             </div>
           </a>
         </section>
 
         <button class="btn">Something Else</button>
+
+      <% location = @user.location.split(",")[0]  %>
+      <p class="subhead tk-bello-pro">In <%= link_to location, location_path(@user.id),class: "location-change", title: "Change Location" %></p>
+
 
       </div>
 
