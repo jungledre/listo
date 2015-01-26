@@ -6,12 +6,6 @@ class EventsController < ApplicationController
   require 'json'
 
   def create
-
-  end
-
-  def show
-    @page = 'event'
-    @user = current_user
     params = {  near: 'ballard wa',
                 query: 'coffee',
                 price: '1,2',
@@ -28,7 +22,13 @@ class EventsController < ApplicationController
     @venue = @venues[rand(0..@venues.length)]['venue']
     @venue_name = @venue['name']
     @venue_location = @venue['location']['address']
- end
+  end
+
+  def show
+    @page = 'event'
+    @user = current_user
+
+  end
 
   def flake
 
