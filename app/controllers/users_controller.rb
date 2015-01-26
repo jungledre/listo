@@ -5,7 +5,15 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user = User.create(user_params)
 
+    if @user
+      session[:user_id] = @user.id
+      flash[:success] = "User logged in!!"
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   def show
@@ -19,6 +27,11 @@ class UsersController < ApplicationController
 
   def update
 
+    @user = User.find(params[:id])
+    if @user.update_attribute(:location, params[:user][:location])
+      redirect_to activities_path
+    end
+
   end
 
   def destroy
@@ -27,6 +40,7 @@ class UsersController < ApplicationController
 
   def dashboard
     @page = "dashboard"
+    @user = current_user
 
   end
 
@@ -34,6 +48,11 @@ class UsersController < ApplicationController
 
   end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:email,:first_name,:last_name,:password,:password_confirmation)
+  end
 
 
 end

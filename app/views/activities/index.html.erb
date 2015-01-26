@@ -2,11 +2,12 @@
   <div class="row text-center">
     <h1 class="tk-brandon-grotesque">I WANT TO GO</h1>
 
-    <% if !true %> <!-- check if @current_user.location is set -->
+    <% if !@user.location %> <!-- check if @current_user.location is set -->
       <div class="col-md-4 col-md-offset-4">
         <p class="subhead tk-bello-pro">Where?</p>
         <%= bootstrap_form_for @user do |f| %>
-          <% f.select :location, [['foursquare-val', 'Near By'],['foursquare-val', 'Neighborhood One'],['foursquare-val', 'Neighborhood Two']], hide_label: :true %>
+          <%= f.select :location, [['Near By', 'foursquare-val-1'],['Neighborhood One', 'foursquare-val-2'],['Neighborhood Two', 'foursquare-val-3']], hide_label: :true %>
+          <%= f.submit %>
         <% end %>
       </div>
     <% else %>
