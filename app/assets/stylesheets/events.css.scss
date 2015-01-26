@@ -1,3 +1,38 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$offwhite: #ecf0f1;
+$darkpurple: #8e44ad;
+$halfpurple: rgba(142, 68, 173,.5);
+$belize: rgba(41, 128, 185,1.0);
+
+
+#events {
+
+  .act-box {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 0;
+    //margin-right: 4.5%;
+    padding-bottom: 100%;
+    -webkit-border-radius: 50% 50% 0 50%;
+    -moz-border-radius: 50% 50% 0 50%;
+    border-radius: 50% 50% 0 50%;
+    transform: rotate(45deg);
+    border: 6px solid $offwhite;
+
+    .act-inner {
+      position: absolute;
+      top: 100px;
+      left: 60px;
+      transform: rotate(-45deg);
+      @media screen and (max-width: 600px) {
+        //display: none;
+      }
+    }
+  }
+
+
+}
