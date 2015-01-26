@@ -1,0 +1,13 @@
+
+
+<!-- server upload -->
+<%= form_for @user, :html => { :multipart => true } do |f| %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+<% end %>
+
+ <!-- for direct upload  -->
+<%= form_tag(create_img, :method => :post) do  %>
+  <%= cl_image_upload_tag(@user.id) %>
+    ...
+<% end %>

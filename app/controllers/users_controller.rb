@@ -16,6 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_img
+    # Server Upload
+    Cloudinary::Uploader.upload(params[:image], :public_id => params[:id])
+  end
+
   def show
     @page = "bio"
 
