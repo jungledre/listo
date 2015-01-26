@@ -10,11 +10,11 @@ $belize: rgba(41, 128, 185,1.0);
 
 #activities {
   h1 {
-    font-size: 7vw;
+    /*font-size: 7vw;
     text-shadow: 4px 2px 0px #222;
     font-weight: 700;
-    color: $offwhite;
-    margin: 60px auto 40px;
+    color: $offwhite;*/
+    margin: 20px auto 40px;
   }
   p.subhead {
     font-size: 32px;
@@ -87,12 +87,3 @@ $belize: rgba(41, 128, 185,1.0);
   }
 
 } /* #activities */
-
-@media screen and (max-width: 770px) {
-
-
-   #activities h1 {
-    font-size: 8.5vw;
-   }
-
-}
