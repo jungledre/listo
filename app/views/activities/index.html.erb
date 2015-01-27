@@ -1,6 +1,6 @@
 <section class="container">
   <div class="row text-center">
-
+  <%= render partial: "partials/flash" %>
 
     <% if !@user.location || @user.location === ' ' %>
     <!-- check if @current_user.location is set -->
@@ -36,26 +36,11 @@
         <p class="subhead tk-bello-pro">Choose Activity:</p>
 
         <section class="act-wrapper clearfix">
-          <a href="/activities/<%=@activities[0][:id]%>">
-            <div class="act-box">
-              <% image = @activities[0][:id].to_s + '.svg' %>
-              <%= image_tag image, class: "act-inner" %>
-            </div>
-          </a>
-
-          <a href="/activities/<%=@activities[1][:id]%>">
-            <div class="act-box">
-              <% image = @activities[1][:id].to_s + '.svg' %>
-              <%= image_tag image, class: "act-inner" %>
-            </div>
-          </a>
-
-          <a href="/activities/<%=@activities[2][:id]%>">
-            <div class="act-box">
-              <% image = @activities[2][:id].to_s + '.svg' %>
-              <%= image_tag image, class: "act-inner" %>
-            </div>
-          </a>
+          <% (0..2).each do |i| %>
+            <% activity_image = image_tag(@activities[i][:id].to_s + '.svg', class: "act-inner") %>
+            <% activity_div = content_tag(:div, activity_image, class: "act-box") %>
+            <%= link_to activity_div, add_activity_path(@activities[i]), class: "act-link" %>
+          <% end %>
         </section>
 
         <%= link_to 'Something Else', activities_path, class: "btn" %>
@@ -63,9 +48,7 @@
         <% location = @user.location.split(",")[0]  %>
         <p class="subhead tk-bello-pro">In: <%= link_to location, location_path(@user.id),class: "location-change", title: "Change Location" %></p>
 
-
       </div>
-
 
     <% end %>
 
