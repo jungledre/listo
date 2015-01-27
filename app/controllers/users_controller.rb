@@ -27,21 +27,29 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user
-    @user = User.find(params[:id])
-
-    if @user.update_attribute(:location, params[:user][:location])
-      redirect_to activities_path
-    end
+    # current_user
+    # @user = User.find(params[:id])
+    @user = current_user
+    # if @user.update_attribute(:location, params[:user][:location])
+    #   # redirect_to activities_path
+    # end
 
     if params[:user][:image]
       uploaded_file_path = params[:user][:image].path
       # Server Upload
       result = Cloudinary::Uploader.upload(uploaded_file_path, {:public_id => "user_"+params[:id],:invalidate => true})
 
-      @user.update_attribute(:bio, params[:user][:bio])
-      redirect_to dashboard_path
+      final_url = result["secure_url"]
+      @user.update_attribute(:profile_img, final_url)
     end
+
+     @user.update_attributes!({
+        :bio => params[:user][:bio],
+        :location => params[:user][:location]
+      })
+
+    redirect_to dashboard_path
+    # render json: @user
 
   end
 

@@ -1,6 +1,6 @@
 $(function(){
 
-profile_pic();
+// profile_pic();
 
 });
 
