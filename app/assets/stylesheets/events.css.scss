@@ -49,7 +49,33 @@ $belize: rgba(41, 128, 185,1.0);
       float: left;
     }
   }
-
+  .user-wrapper {
+    ul{
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 10px 0px;
+        float: left;
+        width: 100%;
+        img {
+          border-radius: 50%;
+          margin-right: 10px;
+          width: 100px;
+          display: block;
+          float: left;
+        }
+        .user-name {
+          float: left;
+          color: $offwhite;
+          text-decoration: none;
+          padding: 15px 20px 0 10px;
+        }
+        .btn {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
 
 
 

@@ -19,11 +19,17 @@
 
 <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
   <p class="subhead tk-bello-pro">With who:</p>
-    <% @taco.each do |taco| %>
-
-      <%= cl_image_tag("user_"+@taco.id.to_s, :width => 100, :height => 150, :crop => :fill, :version=>@current_user.updated_at.to_i) %>
-
-    <% end %>
+  <div class="user-wrapper">
+    <ul>
+        <% 4.times do |user| %>
+        <li>
+          <%= cl_image_tag("user_1", :width => 100, :height => 100, :crop => :fill, :version=>@current_user.updated_at.to_i) %>
+          <%= link_to '<h3>First_name Last_name</h3>'.html_safe, user_path, class: "user-name" %>
+          <%= link_to 'Flaked?', flake_path, class: "btn btn-danger" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 </section>

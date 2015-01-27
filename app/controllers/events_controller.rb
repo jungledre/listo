@@ -17,6 +17,8 @@ class EventsController < ApplicationController
     @venue_name = @venue['name']
     @venue_location = @venue['location']['address']
 
+    @event = Event.find_by_id(params[:id])
+
     @taco = []
   end
 
