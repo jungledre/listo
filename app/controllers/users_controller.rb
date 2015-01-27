@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @page = "bio"
     @user = current_user
+    # @score = default_score - @user.flakes.length
 
   end
 
@@ -70,6 +71,7 @@ class UsersController < ApplicationController
   def dashboard
     @page = "dashboard"
     @user = current_user
+    # @score = default_score - @user.flakes.length
 
   end
 
