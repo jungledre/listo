@@ -7,13 +7,15 @@ class EventsController < ApplicationController
   end
 
   def show
-    @page = 'event'
-    @user = current_user
     @activity = "Grab A Drink"
-    @places = Foursquare.get_places 'Ballard wa', 'coffee'
-    @place = @places[rand(0..@places.length)]['venue']
-    @place_name = @place['name']
-    @place_location = @place['location']['address']
+    @user = current_user
+
+    @venues = Foursquare.get_venues 'South Lake Union, Seattle, WA', 'lunch'
+
+    @venue = @venues[rand(0...@venues.length)]['venue']
+    @venue_name = @venue['name']
+    @venue_location = @venue['location']['address']
+    # render :json => @venues
   end
 
   def flake
