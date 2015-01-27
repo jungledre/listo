@@ -15,5 +15,9 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
+  def default_score
+    @score = 10
+  end
+
 
 end
