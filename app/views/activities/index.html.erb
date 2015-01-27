@@ -38,19 +38,22 @@
         <section class="act-wrapper clearfix">
           <a href="#">
             <div class="act-box">
-              <div class="act-inner"><span><%=@activities[0].name%></span></div>
+              <% image = @activities[0][:id].to_s + '.svg' %>
+              <%= image_tag image, class: "act-inner" %>
             </div>
           </a>
 
           <a href="#">
             <div class="act-box">
-              <div class="act-inner"><span><%=@activities[1].name%></span></div>
+              <% image = @activities[1][:id].to_s + '.svg' %>
+              <%= image_tag image, class: "act-inner" %>
             </div>
           </a>
 
           <a href="#">
             <div class="act-box">
-              <div class="act-inner"><span><%=@activities[2].name%></span></div>
+              <% image = @activities[2][:id].to_s + '.svg' %>
+              <%= image_tag image, class: "act-inner" %>
             </div>
           </a>
         </section>

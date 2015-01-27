@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @page = "event"
     @activity = "Grab A Drink"
     @user = current_user
 
