@@ -21,13 +21,11 @@ Rails.application.routes.draw do
   get 'events/:id' => 'events#show'
   post 'users/:id/flake' => 'events#flake', as: :flake
 
-
   get 'messages' => 'messages#create'
   delete 'messages/:id' => 'messages#destroy'
 
   get 'activities' => 'activities#index'
-  get 'activities/:activity_id' => 'activities#add_activity'
+  post 'activities/join/:activity_id' => 'activities#add_activity', as: :add_activity
 
   get '*path' => redirect('/')
-
 end

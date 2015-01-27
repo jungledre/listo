@@ -10,19 +10,14 @@ class ActivitiesController < ApplicationController
 
   def add_activity
     @user = current_user
+    exists = @user.activities.where({id:params[:activity_id]}).any?
     activity = Activity.find_by_id(params[:activity_id])
-    match = false
-    if @user.activities.any?
-      @user.activities.each do |user_act|
-        if activity == user_act
-          match = true
-        end
-      end
-    end
-    if !match
-      @user.activities << activity
-    end
-    redirect_to activities_path
-  end
 
+    @user.activities << activity unless exists
+
+    respond_to do |format|
+      format.json {render json: {joined:!exists, activity:activity}}
+      format.html {redirect_to activities_path}
+    end
+  end
 end
