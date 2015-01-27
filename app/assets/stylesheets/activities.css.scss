@@ -37,7 +37,6 @@ $belize: rgba(41, 128, 185,1.0);
         border: 6px solid $offwhite;
 
         .act-inner {
-          //position: absolute;
           transform: rotate(-45deg);
           @media screen and (max-width: 600px) {
             //display: none;
