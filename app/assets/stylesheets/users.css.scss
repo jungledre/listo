@@ -45,6 +45,22 @@ $belize: rgba(41, 128, 185,1.0);
       }
     }
   }
+  .bio, .form {
+    a {
+      color: #34495e;
+    }
+    .subhead {
+      margin-bottom: 0;
+    }
+    textarea {
+      max-width: 100%;
+      height: 200px;
+    }
+
+  }
+  .hide {
+    display: none;
+  }
 
 
 }
