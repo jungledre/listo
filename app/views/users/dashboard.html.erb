@@ -11,19 +11,28 @@
 
 
   <div class="bio">
+  <%= link_to 'Edit Profile', '#', class: "toggle_edit" %>
     <p class="subhead tk-bello-pro">Bio:</p>
 
+    <p><%= @current_user.bio %></p>
 
+
+
+
+  </div>
+
+  <div class="form hide">
     <!-- server upload -->
-    <%= form_for @user do |f| %>
-      <%= f.file_field :image %>
-      <%= f.text_area :bio %>
-      <%= f.submit %>
+    <%= bootstrap_form_for @user do |f| %>
+      <%= f.file_field :image, hide_label: :true, class: "" %>
+      <%= f.text_area :bio, hide_label: :true %>
+      <%= f.submit 'Update'%>
     <% end %>
 
      <!-- for direct upload  -->
-
   </div>
+
+
 </div>
 
 <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
