@@ -29,7 +29,7 @@ $belize: rgba(41, 128, 185,1.0);
         width: 100%;
         height: 0;
         //margin-right: 4.5%;
-        padding-bottom: 100%;
+        padding-bottom: 95%;
         -webkit-border-radius: 50% 50% 0 50%;
         -moz-border-radius: 50% 50% 0 50%;
         border-radius: 50% 50% 0 50%;
@@ -37,9 +37,6 @@ $belize: rgba(41, 128, 185,1.0);
         border: 6px solid $offwhite;
 
         .act-inner {
-          position: absolute;
-          top: 100px;
-          left: 60px;
           transform: rotate(-45deg);
           @media screen and (max-width: 600px) {
             //display: none;

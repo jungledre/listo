@@ -1,3 +1,50 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$offwhite: #ecf0f1;
+$darkpurple: #8e44ad;
+$halfpurple: rgba(142, 68, 173,.5);
+$belize: rgba(41, 128, 185,1.0);
+
+
+#dashboard {
+  .user-wrap {
+    height: 0;
+    padding-bottom:125%;
+    @media screen and (max-width: 770px) {
+      float: left;
+      width: 200px;
+      height: 200px;
+      padding-bottom: 0;
+    }
+    .user-box {
+      position: relative;
+      overflow: hidden;
+      float: left;
+      width: 100%;
+      height: 0;
+      padding-bottom: 95%;
+      -webkit-border-radius: 50% 50% 0 50%;
+      -moz-border-radius: 50% 50% 0 50%;
+      border-radius: 50% 50% 0 50%;
+      transform: rotate(45deg);
+      border: 6px solid $offwhite;
+      @media screen and (max-width: 770px) {
+        width: 150px;
+        padding-bottom: 150px;
+      }
+      img {
+        transform: rotate(-45deg);
+        margin: -8% 0 0 -6%;
+        width: 125%;
+        height: auto;
+        @media screen and (max-width: 600px) {
+          //display: none;
+        }
+      }
+    }
+  }
+
+
+}
