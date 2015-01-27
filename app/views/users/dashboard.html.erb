@@ -1,0 +1,12 @@
+
+<%= cl_image_tag("user_"+@current_user.id.to_s, :width => 100, :height => 150, :crop => :fill, :version=>@current_user.updated_at.to_i) %>
+
+<!-- server upload -->
+<%= form_for @user do |f| %>
+  <%= f.file_field :image %>
+  <%= f.text_area :bio %>
+  <%= f.submit %>
+<% end %>
+
+ <!-- for direct upload  -->
+

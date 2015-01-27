@@ -25,13 +25,13 @@
 
     <nav>
       <ul>
-        <% if true %> <!-- check if user is logged in -->
-          <li><%= link_to 'Dashboard', dashboard_path(1) %></li>
-          <!-- 1 will be replaced with @user.id  -->
-          <li><%= link_to 'Activities', activities_path %></li>
+        <% if @user.id == nil  %> <!-- check if user is logged in -->
+          <li><button class="link" data-toggle="modal" data-target="#login-modal">Log In</button></li>
 
         <% else %>
-        <li><button class="link" data-toggle="modal" data-target="#login-modal">Log In</button></li>
+          <li><%= link_to 'Dashboard', dashboard_path(@user.id) %></li>
+          <li><%= link_to 'Activities', activities_path %></li>
+          <li><%= link_to 'Logout', logout_path %></li>
         <% end %>
       </ul>
     </nav>
@@ -43,7 +43,29 @@
 <%= yield %>
 </main>
 
-<footer></footer>
+<footer>
+  <section class="container">
+
+    <div class="col-xs-6 col-md-1 col-md-offset-4">
+      <h5>Company</h5>
+        <ul>
+          <li><%= link_to 'About', about_path %></li>
+          <li><%= link_to 'FAQ', faq_path %></li>
+        </ul>
+    </div>
+    <div class="col-xs-6 col-md-3 col-md-offset-2">
+      <h5>Dev Team</h5>
+      <ul>
+        <li><%= link_to 'Adrienne Kerr', 'https://www.linkedin.com/in/kerraj' %></li>
+        <li><%= link_to 'Alexander Monsanto', 'https://www.linkedin.com/in/alexandermonsanto'%></li>
+        <li><%= link_to 'Alyssa Williams', 'https://www.linkedin.com/in/ajwilliams12' %></li>
+        <li><%= link_to 'Patrick Moore', 'https://www.linkedin.com/in/patrickemoore' %></li>
+      </ul>
+    </div>
+
+  </section>
+
+</footer>
 
 </body>
 </html>

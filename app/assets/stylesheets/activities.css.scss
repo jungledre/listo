@@ -10,15 +10,7 @@ $belize: rgba(41, 128, 185,1.0);
 
 #activities {
   h1 {
-    font-size: 7vw;
-    text-shadow: 4px 2px 0px #222;
-    font-weight: 700;
-    color: $offwhite;
-    margin: 60px auto 40px;
-  }
-  p.subhead {
-    font-size: 32px;
-    margin-bottom: 20px;
+    margin: 20px auto 40px;
   }
   .act-wrapper {
 
@@ -85,14 +77,12 @@ $belize: rgba(41, 128, 185,1.0);
   .btn:hover {
     background: $halfpurple;
   }
+  .location-change {
+    color: $offwhite;
+  }
+  .location-change:hover {
+    text-shadow: 2px 1px 0 #333;
+    text-decoration: none;
+  }
 
 } /* #activities */
-
-@media screen and (max-width: 770px) {
-
-
-   #activities h1 {
-    font-size: 8.5vw;
-   }
-
-}

@@ -12,9 +12,9 @@
           <%= f.text_field :email, placeholder: "Email", hide_label: :true %>
           <%= f.text_field :first_name, placeholder: "First Name", hide_label: :true %>
           <%= f.text_field :last_name, placeholder: "Last Name", hide_label: :true %>
-          <%= f.text_field :password_digest, placeholder: "Password", hide_label: :true %>
+          <%= f.password_field :password, placeholder: "Password", hide_label: :true %>
           <!-- :password digest needs to change on both of these when we set up bkrypt!! -->
-          <%= f.text_field :password_digest, placeholder: "Confirm Password", hide_label: :true %>
+          <%= f.password_field :password_confirmation, placeholder: "Confirm Password", hide_label: :true %>
           <%= f.submit 'Sign Up' %>
         <% end %>
       </div>
