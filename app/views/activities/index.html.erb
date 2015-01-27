@@ -36,21 +36,21 @@
         <p class="subhead tk-bello-pro">Choose Activity:</p>
 
         <section class="act-wrapper clearfix">
-          <a href="#">
+          <a href="/activities/<%=@activities[0][:id]%>">
             <div class="act-box">
               <% image = @activities[0][:id].to_s + '.svg' %>
               <%= image_tag image, class: "act-inner" %>
             </div>
           </a>
 
-          <a href="#">
+          <a href="/activities/<%=@activities[1][:id]%>">
             <div class="act-box">
               <% image = @activities[1][:id].to_s + '.svg' %>
               <%= image_tag image, class: "act-inner" %>
             </div>
           </a>
 
-          <a href="#">
+          <a href="/activities/<%=@activities[2][:id]%>">
             <div class="act-box">
               <% image = @activities[2][:id].to_s + '.svg' %>
               <%= image_tag image, class: "act-inner" %>

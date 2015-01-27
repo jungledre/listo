@@ -16,7 +16,6 @@ class EventsController < ApplicationController
     @venue = @venues[rand(0...@venues.length)]['venue']
     @venue_name = @venue['name']
     @venue_location = @venue['location']['address']
-    # render :json => @venues
   end
 
   def flake
