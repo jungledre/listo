@@ -9,6 +9,7 @@
     </div>
   </div>
 
+
   <div class="venue">
     <p class="subhead tk-bello-pro">Venue:</p>
         <%= @venue_name %>
@@ -17,6 +18,11 @@
 
 <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
   <p class="subhead tk-bello-pro">With who:</p>
+    <% @taco.each do |taco| %>
+
+      <%= cl_image_tag("user_"+@taco.id.to_s, :width => 100, :height => 150, :crop => :fill, :version=>@current_user.updated_at.to_i) %>
+
+    <% end %>
 </div>
 
 </section>
