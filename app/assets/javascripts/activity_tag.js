@@ -6,20 +6,15 @@ $(function(){
     $.post(url,function(data){
       if(data.joined){
         swal({
-          title: 'You have decided to ' + data.activity.name,
-          text: 'You will not be able to recover this imaginary file!',
-          type: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: "#DD6B55",
-          confirmButtonText: "Yes, delete it!",
-          cancelButtonText: "No, cancel plx!",
-          closeOnConfirm: false,
-          closeOnCancel: false
-          }
-        });
+          title: 'You have decided to go ' + data.activity.name
+        })
         //location.href="/"
       }else{
-        swal('You already did this.')
+        swal({
+          title: 'You have already selected this activity.',
+          text: 'This message will self destruct in 2 seconds.',
+          timer: 2000
+        });
       }
     },'json');
   })
