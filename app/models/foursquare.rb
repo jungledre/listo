@@ -1,7 +1,8 @@
 class Foursquare
-  def self.get_places location, query
-    params = {  near: location,
+  def self.get_venues location, query
+    params = {  ll: Geocoder.coordinates(location).join(","),
                 query: query,
+                radius: 700,
                 openNow: '1',
                 price: '1,2'
                 }
@@ -16,7 +17,6 @@ class Foursquare
       v: '20130815',
       m: 'foursquare'
     })
-
     uri = URI.parse("https://api.foursquare.com/v2/venues/explore")
     uri.query = URI.encode_www_form(params)
     puts uri.query

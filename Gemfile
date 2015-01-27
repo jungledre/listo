@@ -30,6 +30,8 @@ gem 'spring',        group: :development
 
 gem 'cloudinary'
 
+gem 'geocoder'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
