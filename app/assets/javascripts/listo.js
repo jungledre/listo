@@ -1,5 +1,9 @@
 $(function(){
-  //Cloudinary Preview
+
+});
+
+//Cloudinary Preview Future Release
+var profile_pic = function(){
   $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {
     $('.preview').html(
       $.cloudinary.image(data.result.public_id,
@@ -9,5 +13,4 @@ $(function(){
     $('.image_public_id').val(data.result.public_id);
     return true;
   });
-
-});
+}
