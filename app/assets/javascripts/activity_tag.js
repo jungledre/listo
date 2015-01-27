@@ -5,10 +5,16 @@ $(function(){
     var url = link.attr('href');
     $.post(url,function(data){
       if(data.joined){
-        swal('You have decided to ' + data.activity.name)
+        swal({
+          title: 'You have decided to go ' + data.activity.name
+        })
         //location.href="/"
       }else{
-        swal('You already did this.')
+        swal({
+          title: 'You have already selected this activity.',
+          text: 'This message will self destruct in 2 seconds.',
+          timer: 2000
+        });
       }
     },'json');
   })
