@@ -1,17 +1,23 @@
 <section class="container">
 
 
-<h1 class="tk-brandon-grotesque">Event</h1>
+<h1 class="tk-brandon-grotesque"><%= @activity %></h1>
 
-<div class="col-md-3">
-  <div class="act-box">
-    <div class="act-inner"><span>Take A Walk</span></div>
+<div class="col-sm-3 col-md-3 clearfix">
+  <div class="act-wrap clearfix">
+    <div class="act-box">
+      <div class="act-inner"><span>Take A Walk</span></div>
+    </div>
+  </div>
+
+  <div class="venue">
+    <p class="subhead tk-bello-pro">Venue:</p>
+    <%= @venue_name %>
   </div>
 </div>
 
-
-<div class="col-md-8 col-md-offset-1">
-  <%= @venue_name %>
+<div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
+  <p class="subhead tk-bello-pro">With who:</p>
 </div>
 
 
