@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   delete 'messages/:id' => 'messages#destroy'
 
   get 'activities' => 'activities#index'
+  get 'activities/:activity_id' => 'activities#add_activity'
 
   get '*path' => redirect('/')
 
