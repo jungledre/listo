@@ -36,7 +36,7 @@
         <p class="subhead tk-bello-pro">Choose Activity:</p>
 
         <section class="act-wrapper clearfix">
-          <a href="/activities/<%=@activities[0][:id]%>">
+          <a href="/activities/<%=@activities[0][:id]%>" class="add_activity">
             <div class="act-box">
               <% image = @activities[0][:id].to_s + '.svg' %>
               <%= image_tag image, class: "act-inner" %>
