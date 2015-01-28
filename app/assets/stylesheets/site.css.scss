@@ -35,6 +35,15 @@ header {
   .branding {
     float: left;
     padding: 10px 0;
+    a {
+      display: block;
+      width: 55px;
+      height: 20px;
+      background-image: image-url('listo-logo.svg');
+      background-size: 100% auto;
+      background-repeat: no;
+      background-position: top center;
+    }
   }
   nav ul {
     float: right;
@@ -63,32 +72,101 @@ header {
   header {
     background: none;
     position: absolute;
+    @media screen and (max-width: 770px) {
+      background: $offwhite;
+    }
+    .branding {
+      float: left;
+      padding: 10px 0;
+      a {
+        display: block;
+        width: 55px;
+        height: 20px;
+        background-image: image-url('listo-logo.svg');
+        background-size: 100% auto;
+        background-repeat: no;
+        background-position: bottom center;
+        @media screen and (max-width: 770px) {
+          background-position: top center;
+        }
+      }
+    }
+    a, .link, a:hover{
+      color: $offwhite;
+      @media screen and (max-width: 770px) {
+        color: $darkpurple;
+      }
+    }
   }
   main {
     background: none;
     padding-top: 0;
-  }
-  header {
-    @media screen and (max-width: 770px) {
-      background: $offwhite;
+    .intro-wrapper {
+      color: $offwhite;
+      padding-top: 100px;
+      height: 560px;
+      @media screen and (max-width: 770px) {
+        color: $offwhite;
+        height: 360px;
+        padding-top: 80px;
+      }
+      h1 {
+        font-size: 7vw;
+        text-shadow: 2px 2px 6px #222;
+        font-weight: 700;
+        @media screen and (max-width: 770px) {
+          font-size: 8.5vw;
+        }
+      }
+      p {
+        font-size: 2vw;
+        @media screen and (max-width: 770px) {
+          display: none;
+        }
+      }
+      .btn {
+        display: inline-block;
+        background: none;
+        border: 2px solid $offwhite;
+        margin: 100px auto 40px;
+        font-size: 22px;
+        padding:8px 20px;
+        color: $offwhite;
+        width: auto;
+        @media screen and (max-width: 770px) {
+          margin: 50px auto 40px;
+          font-size: 18px;
+        }
+      }
+      .btn:hover {
+        background: $halfpurple;
+        color: $offwhite;
+      }
+    } /* .intro-wrapper */
+    .content-wrapper {
+      margin-top: -560px;
+      padding-top: 40px;
+      @media screen and (max-width: 770px) {
+        margin-top: -360px;
+      }
+    }
+    .content {
+      h2 {
+        color: $halfpurple;
+      }
+      h2:first-child {
+        margin-top: 0;
+      }
+      img {
+        //border-radius: 20%;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        height: auto;
+      }
     }
   }
-  header a, header .link, header a:hover{
-    color: $offwhite;
-    @media screen and (max-width: 770px) {
-      color: $darkpurple;
-    }
-  }
-  .content-wrapper {
-    margin-top: -560px;
-    padding-top: 40px;
-    @media screen and (max-width: 770px) {
-      margin-top: -360px;
-    }
-  }
-  .content {
-    min-height: 600px;
-  }
+
 } /* #home */
 
 #faq {
@@ -100,53 +178,12 @@ header {
 }
 
 
-.intro-wrapper {
-  color: $offwhite;
-  padding-top: 100px;
-  @media screen and (max-width: 770px) {
-    color: $offwhite;
-    height: 360px;
-    padding-top: 80px;
-  }
-  h1 {
-    font-size: 7vw;
-    text-shadow: 2px 2px 6px #222;
-    font-weight: 700;
-    @media screen and (max-width: 770px) {
-      font-size: 8.5vw;
-    }
-  }
-  p {
-    font-size: 2vw;
-    @media screen and (max-width: 770px) {
-      display: none;
-    }
-  }
-  .btn {
-    display: inline-block;
-    background: none;
-    border: 2px solid $offwhite;
-    margin: 100px auto 40px;
-    font-size: 22px;
-    padding:8px 20px;
-    color: $offwhite;
-    width: auto;
-    @media screen and (max-width: 770px) {
-      margin: 50px auto 40px;
-      font-size: 18px;
-    }
-  }
-  .btn:hover {
-    background: $halfpurple;
-    color: $offwhite;
-  }
-} /* .intro-wrapper */
+
 
 
 main {
   background: $belize;
-  min-height: 600px;
-  padding: 40px 0 20px;
+  padding: 40px 0;
   .alert {
     position: absolute;
     top: 50px;
