@@ -1,11 +1,13 @@
 <section class="container">
 
-<h1 class="tk-brandon-grotesque"><%= @activity %></h1>
+<% @test %>
+
+<h1 class="tk-brandon-grotesque"><%= @activity.name %></h1>
 
 <div class="col-sm-3 col-md-3 clearfix">
   <div class="act-wrap clearfix">
     <div class="act-box">
-      <% image = '2'.to_s + '.svg' %>
+      <% image = @activity.id.to_s + '.svg' %>
       <%= image_tag image, class: "act-inner" %>
     </div>
   </div>
@@ -14,10 +16,10 @@
     <%= link_to 'FLAKE OUT', flake_path, class: "btn btn-danger" %>
   </div>
 
-
   <div class="venue">
     <p class="subhead tk-bello-pro">Venue:</p>
-        <%= @venue_name %>
+        <h3><%= @venue_name %></h3>
+        <h4><%= link_to @venue_location, 'https://www.google.com/maps/place/' + @venue_location + ' seattle, wa' %></h4>
   </div>
 </div>
 
@@ -25,24 +27,25 @@
   <p class="subhead tk-bello-pro">With who:</p>
   <div class="user-wrapper clearfix">
     <ul>
-        <% 3.times do |user| %>
-        <li>
-          <% if !@user.profile_img == nil  %>
-            <%= cl_image_tag("user", _2:width => 100, :height => 100, :crop => :fill, :version=>@current_user.updated_at.to_i) %>
-          <% else %>
-            <%= image_tag('che3.png', id: "default-pic" ) %>
+        <% @group.each do |user| %>
+          <% if user != @current_user %>
+            <li>
+            <% if !user.profile_img == nil  %>
+              # <%= cl_image_tag("user_" + user.id, :width => 100, :height => 100, :crop => :fill, :version => (user.id).updated_at.to_i) %>
+            <% else %>
+              <%= image_tag('che3.png', id: "default-pic" ) %>
+            <% end %>
+            <% full_name = '<h3>' + user.first_name + " " + user.last_name + '</h3>' %>
+            <%= link_to full_name.html_safe, user_path(user.id), class: "user-name" %>
+            <%= link_to 'Flaked?', flake_path, class: "btn btn-danger" %>
+            </li>
           <% end %>
-          <%= link_to '<h3>Firstname Lastname</h3>'.html_safe, user_path(), class: "user-name" %>
-          <%= link_to 'Flaked?', flake_path, class: "btn btn-danger" %>
-        </li>
-      <% end %>
+        <% end %>
     </ul>
   </div>
 
   <p class="subhead tk-bello-pro">Chat:</p>
   <div class="chat-wrapper">
-
-
 
   </div>
 

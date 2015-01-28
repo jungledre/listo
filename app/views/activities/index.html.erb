@@ -34,6 +34,8 @@
       <div class="col-md-8 col-md-offset-2">
         <p class="subhead tk-bello-pro">Choose Activity:</p>
 
+        <span id="current-user" style="display: none;"><%=@user.id%></span>
+
         <section class="act-wrapper clearfix">
           <% (0..2).each do |i| %>
             <% activity_image = image_tag(@activities[i][:id].to_s + '.svg', class: "act-inner") %>

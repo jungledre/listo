@@ -28,8 +28,5 @@ class ApplicationController < ActionController::Base
     else
       @happening = false
     end
-
   end
-
-
 end
