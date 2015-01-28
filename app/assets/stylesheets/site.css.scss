@@ -35,6 +35,15 @@ header {
   .branding {
     float: left;
     padding: 10px 0;
+    a {
+      display: block;
+      width: 55px;
+      height: 20px;
+      background-image: image-url('listo-logo.svg');
+      background-size: 100% auto;
+      background-repeat: no;
+      background-position: top center;
+    }
   }
   nav ul {
     float: right;
@@ -63,6 +72,22 @@ header {
   header {
     background: none;
     position: absolute;
+    .branding {
+      float: left;
+      padding: 10px 0;
+      a {
+        display: block;
+        width: 55px;
+        height: 20px;
+        background-image: image-url('listo-logo.svg');
+        background-size: 100% auto;
+        background-repeat: no;
+        background-position: bottom center;
+        @media screen and (max-width: 770px) {
+          background-position: top center;
+        }
+      }
+    }
   }
   main {
     background: none;
