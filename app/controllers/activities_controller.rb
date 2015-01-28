@@ -7,7 +7,6 @@ class ActivitiesController < ApplicationController
     @user = current_user
     @activities = Activity.all.order("RANDOM()").limit(3)
 
-
   end
 
   def add_activity
