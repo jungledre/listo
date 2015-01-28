@@ -172,7 +172,7 @@ header {
 #faq {
   main {
     li {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
     }
   }
 }
@@ -184,6 +184,7 @@ header {
 main {
   background: $belize;
   padding: 40px 0;
+  min-height: 400px;
   .alert {
     position: absolute;
     top: 50px;
