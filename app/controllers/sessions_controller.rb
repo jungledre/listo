@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:success] = "You have been logged in!"
-      redirect_to root_path
+      redirect_to activities_path
     else
       flash[:error] = "Credentials Invalid!!"
       redirect_to root_path

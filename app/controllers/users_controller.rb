@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user
       session[:user_id] = @user.id
       flash[:success] = "You have been logged in!"
-      redirect_to root_path
+      redirect_to activities_path
     else
       redirect_to root_path
     end
