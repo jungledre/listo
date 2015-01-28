@@ -20,13 +20,15 @@ $belize: rgba(41, 128, 185,1.0);
   }
   .user-wrap {
     height: 0;
-    padding-bottom:125%;
+    padding-bottom:128%;
+    margin-bottom: 20px;
     @media screen and (max-width: 770px) {
       float: left;
       width: 200px;
       height: 200px;
       padding-bottom: 0;
     }
+
     .user-box {
       position: relative;
       overflow: hidden;
@@ -53,10 +55,21 @@ $belize: rgba(41, 128, 185,1.0);
         }
       }
     }
+    h2 {
+      clear: both;
+      float: left;
+      width: 100%;
+      text-shadow: 2px 2px 0 #333 ;
+      padding-top: 25%;
+      font-weight: 700;
+      color: $offwhite;
+    }
   }
   .bio, .form {
     a {
       color: #34495e;
+      display: block;
+      margin-bottom:10px;
     }
     textarea {
       max-width: 100%;
