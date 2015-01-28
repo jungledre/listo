@@ -3,7 +3,6 @@ class SiteController < ApplicationController
   def index
     @page = "home"
     @user = current_user ? current_user : User.new
-
   end
 
   def about
@@ -15,5 +14,4 @@ class SiteController < ApplicationController
     @page = "faq"
     @user = current_user ? current_user : User.new
   end
-
 end

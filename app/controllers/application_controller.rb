@@ -18,6 +18,4 @@ class ApplicationController < ActionController::Base
   def default_score
     @score = 10
   end
-
-
 end

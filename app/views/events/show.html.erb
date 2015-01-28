@@ -14,10 +14,10 @@
     <%= link_to 'FLAKE OUT', flake_path, class: "btn btn-danger" %>
   </div>
 
-
   <div class="venue">
     <p class="subhead tk-bello-pro">Venue:</p>
         <%= @venue_name %>
+        <%= link_to @venue_location, 'https://www.google.com/maps/place/' + @venue_location + ' seattle, wa' %>
   </div>
 </div>
 
@@ -41,8 +41,6 @@
 
   <p class="subhead tk-bello-pro">Chat:</p>
   <div class="chat-wrapper">
-
-
 
   </div>
 
