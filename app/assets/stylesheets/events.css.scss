@@ -33,6 +33,8 @@ $belize: rgba(41, 128, 185,1.0);
       -webkit-border-radius: 50% 50% 0 50%;
       -moz-border-radius: 50% 50% 0 50%;
       border-radius: 50% 50% 0 50%;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
       transform: rotate(45deg);
       border: 6px solid $offwhite;
       @media screen and (max-width: 770px) {
@@ -40,6 +42,8 @@ $belize: rgba(41, 128, 185,1.0);
         padding-bottom: 140px;
       }
       .act-inner {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
         transform: rotate(-45deg);
         @media screen and (max-width: 600px) {
           //display: none;
