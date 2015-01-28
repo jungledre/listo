@@ -7,17 +7,21 @@ class EventsController < ApplicationController
 
   def show
     @page = "event"
-    @activity = "Grab A Drink"
+
     @user = current_user
-    @venues = Foursquare.get_venues 'South Lake Union, Seattle, WA', 'lunch'
+
+    @event = Event.find_by_id(params[:id])
+    @group = @event.users
+    @activity = @event.activity
+
+    location = @user.location
+
+    @test = @activity.name
+
+    @venues = Foursquare.get_venues location, 'coffee'
     @venue = @venues[rand(0...@venues.length)]['venue']
     @venue_name = @venue['name']
     @venue_location = @venue['location']['address']
-
-    @event = Event.find_by_id(params[:id])
-    # @users = @event.users
-
-    @taco = []
   end
 
   # def flake
