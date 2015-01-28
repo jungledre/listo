@@ -21,12 +21,10 @@ class ApplicationController < ActionController::Base
 
   def is_event
     @user = current_user
-
+    @happening = false
     created_at = @user.events.last.created_at
     while (Time.now - created_at).seconds < 10800
       @happening = true
-    else
-      @happening = false
     end
   end
 end
