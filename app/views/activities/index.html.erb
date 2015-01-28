@@ -45,7 +45,7 @@
 
         <%= link_to 'Something Else', activities_path, class: "btn" %>
 
-        <% location = @user.location.split(",")[0]  %>
+        <% location = @user.location.split(",").first %>
         <p class="subhead tk-bello-pro">In: <%= link_to location, location_path(@user.id),class: "location-change", title: "Change Location" %></p>
 
       </div>
