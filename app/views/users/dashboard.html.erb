@@ -4,8 +4,13 @@
 
 <div class="col-sm-3 col-md-3 clearfix">
   <div class="user-wrap clearfix">
+
     <div class="user-box">
+      <% if !@user.profile_img == nil  %>
       <%= cl_image_tag("user_"+@current_user.id.to_s, :width => 250, :height => 250, :crop => :fill, :version=>@current_user.updated_at.to_i) %>
+      <% else %>
+      <%= image_tag('che3.png', id: "default-pic" ) %>
+      <% end %>
     </div>
   </div>
 
@@ -15,9 +20,6 @@
     <p class="subhead tk-bello-pro">Bio:</p>
 
     <p><%= @current_user.bio %></p>
-
-
-
 
   </div>
 

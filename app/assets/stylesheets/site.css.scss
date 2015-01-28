@@ -202,5 +202,17 @@ opacity: 0.8;
 }
 
 #about {
-
+  .pic {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+  }
+  .dev-name {
+    color: $offwhite;
+    text-decoration: none;
+    float: inherit;
+  }
+  p {
+    color: $offwhite;
+  }
 }
