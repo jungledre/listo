@@ -1,10 +1,10 @@
 <section class="container">
   <div class="row text-center">
   <%= render partial: "partials/flash" %>
-    <% if !@user.location || @user.location === ' ' %>
+    <% if @user.location == nil || @user.location == ' ' %>
     <!-- check if @current_user.location is set -->
     <h1 class="tk-brandon-grotesque">WHERE ARE YOU?</h1>
-      <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
         <p class="subhead tk-bello-pro">Choose nieghborhood:</p>
         <%= bootstrap_form_for @user do |f| %>
           <%= f.select :location, [

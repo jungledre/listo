@@ -37,21 +37,24 @@
 
 </div>
 
+
+
+
 <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
+  <% if @user.activities.any?  %>
+    <p class="subhead tk-bello-pro">Waiting to go:</p>
+    <ul class="act_list clearfix">
+    <% @user.activities.each do |act| %>
+
+      <li><%= act.name %> <%= link_to 'x', '/delete_activity', {title: "delete", class: ""} %> </li>
+    <% end %>
+    </ul>
+  <% end %>
+
+
   <p class="subhead tk-bello-pro">Events:</p>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 </section>
