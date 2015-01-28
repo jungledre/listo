@@ -113,6 +113,14 @@ header {
   }
   .content {
     min-height: 600px;
+    margin-top: 300px;
+    margin-bottom: -200px;
+    h2 {
+      color: gray;
+    }
+    img {
+      border-radius: 20%;
+    }
   }
 } /* #home */
 

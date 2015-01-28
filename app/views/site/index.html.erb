@@ -7,19 +7,28 @@
 
 <section class="container content-wrapper">
 <%= render partial: "partials/flash" %>
+
   <div class="row intro-wrapper text-center">
     <div class="col-md-10 col-md-offset-1">
-      <h1 class="tk-brandon-grotesque">ARE YOU READY ?</h1>
+      <h1 class="tk-brandon-grotesque">ARE YOU READY?</h1>
       <p>Join others in your neighborhood for activites around town.</p>
-
       <% if @user.id == nil %> <!-- show signup button if not logged in -->
       <button class="btn" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
       <% end %>
     </div>
   </div>
 
-  <div class="row content">
 
+  <div class="row content">
+    <div class='col-md-6'>
+      <%= image_tag 'meeting.jpg' %>
+    </div>
+    <div class='col-md-6 content-text'>
+      <h2>Are you here for Listo?</h2>
+        <p>Listo is an app that lets you meet new people with shared interests and activities all at the simple click of a button.</p>
+      <h2>The Flake Score</h2>
+        <p>Also there is an added feature rates users on their event attendance known as the "Flake Score". The more you attend events the higher your score, up to a maximum of 10. If you flake from an event your score goes down. And if you don't show up to an event without canceling other members of the event can flake you lowering your score even more! All this is so you can count on other users to show up and have a great time.</p>
+    </div>
   </div>
 
 
