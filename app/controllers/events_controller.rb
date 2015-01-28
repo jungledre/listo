@@ -3,7 +3,6 @@ class EventsController < ApplicationController
   before_action :is_authenticated?
 
   def create
-    #select all users where location is same
   end
 
   def show
