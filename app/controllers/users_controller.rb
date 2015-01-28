@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   def new
-
   end
 
   def create
@@ -20,11 +19,9 @@ class UsersController < ApplicationController
     @page = "bio"
     @user = current_user
     # @score = default_score - @user.flakes.length
-
   end
 
   def edit
-
   end
 
   def update
@@ -61,22 +58,18 @@ class UsersController < ApplicationController
     if @user.update_attribute(:location, ' ' )
       redirect_to activities_path
     end
-
   end
 
   def destroy
-
   end
 
   def dashboard
     @page = "dashboard"
     @user = current_user
     # @score = default_score - @user.flakes.length
-
   end
 
   def flag
-
   end
 
   private
@@ -84,6 +77,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email,:first_name,:last_name,:password,:password_confirmation)
   end
-
-
 end
