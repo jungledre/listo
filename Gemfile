@@ -46,6 +46,9 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
 end
+
+gem 'rails_12factor', group: :production
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
