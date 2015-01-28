@@ -13,10 +13,16 @@ $belize: rgba(41, 128, 185,1.0);
     padding-bottom:125%;
     @media screen and (max-width: 770px) {
       float: left;
-      width: 200px;
-      height: 200px;
-      padding-bottom: 0;
+      width: 50%;
+      min-height: 200px;
+      padding-bottom: 5%;
     }
+    @media screen and (max-width: 516px) {
+      width: 150px;
+      float: none;
+      margin: 0 auto;
+    }
+
     .act-box {
       position: relative;
       float: left;
@@ -31,7 +37,7 @@ $belize: rgba(41, 128, 185,1.0);
       border: 6px solid $offwhite;
       @media screen and (max-width: 770px) {
         width: 150px;
-        padding-bottom: 150px;
+        padding-bottom: 140px;
       }
       .act-inner {
         transform: rotate(-45deg);
@@ -41,36 +47,84 @@ $belize: rgba(41, 128, 185,1.0);
       }
     }
   }
+  .flake-btn-wrapper {
+    width: 100%;
+    max-width: 300px;
+    float: left;
+    @media screen and (max-width: 516px) {
+      float: none;
+      margin: 0 auto;
+    }
+    .btn {
+      width:100%;
+      display: inline-block;
+      margin: 10px auto;
+    }
+  }
   .venue {
     margin-top: 20px;
+    padding-bottom: 20px;
+    float: left;
     @media screen and (max-width: 770px) {
       width: 50%;
-      float: left;
+
     }
   }
   .user-wrapper {
+    margin-bottom: 30px;
     ul{
       list-style: none;
       padding: 0;
       li {
-        padding: 10px 0px;
+        padding: 10px 0 20px;
         float: left;
         width: 100%;
+        line-height: 100%;
         img {
           border-radius: 50%;
           margin-right: 10px;
           width: 100px;
+          height: auto;
           display: block;
+          border: 1px solid $offwhite;
           float: left;
+          @media screen and (max-width: 516px) {
+            float: none;
+            margin: 0 auto;
+          }
         }
         .user-name {
+          display: block;
           float: left;
           color: $offwhite;
           text-decoration: none;
+
           padding: 15px 20px 0 10px;
+          @media screen and (max-width: 516px) {
+            float: none;
+            width: 100%;
+            text-align: center;
+            padding: 0 0 10px;
+          }
+          h3 {
+            font-size: 2vw;
+            @media screen and (max-width: 770px) {
+              font-size: 4vw;
+            }
+            @media screen and (max-width: 516px) {
+              font-size: 6vw;
+            }
+          }
         }
         .btn {
           margin-top: 30px;
+          float: right;
+          @media screen and (max-width: 516px) {
+            float: none;
+            display: block;
+            width: 60%;
+            margin: 0 auto;
+          }
         }
       }
     }
