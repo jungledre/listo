@@ -17,6 +17,7 @@
   <div class="venue">
     <p class="subhead tk-bello-pro">Venue:</p>
         <%= @venue_name %>
+        <%= link_to @venue_location, 'https://www.google.com/maps/place/' + @venue_location + ' seattle, wa' %>
   </div>
 </div>
 
@@ -26,7 +27,7 @@
     <ul>
         <% 3.times do |user| %>
         <li>
-          <% if !@users.profile_img == nil  %>
+          <% if !@user.profile_img == nil  %>
             <%= cl_image_tag("user_2", :width => 100, :height => 100, :crop => :fill, :version=>@current_user.updated_at.to_i) %>
           <% else %>
             <%= image_tag('che3.png', id: "default-pic" ) %>
