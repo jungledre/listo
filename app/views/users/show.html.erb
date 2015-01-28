@@ -1,0 +1,28 @@
+<section class="container">
+
+<h1 class="tk-brandon-grotesque text-center"><%= @show_user.first_name %> <%= @show_user.last_name %></h1>
+
+<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 clearfix">
+  <div class="user-wrap clearfix">
+
+    <div class="user-box">
+      <% if @show_user.profile_img != nil  %>
+      <%= cl_image_tag("user_"+@show_user.id.to_s, :width => 250, :height => 250, :crop => :fill, :version=>@current_user.updated_at.to_i) %>
+      <% else %>
+      <%= image_tag('che3.png', id: "default-pic" ) %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 clearfix">
+  <div class="bio">
+    <p class="subhead tk-bello-pro">Bio:</p>
+
+    <p><%= @show_user.bio %></p>
+
+  </div>
+  <%= link_to "Report", flag_path, class: 'btn btn-danger' %>
+
+</div>
+
+</section>

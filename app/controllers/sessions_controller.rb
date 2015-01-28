@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.authenticate(params[:user][:email], params[:user][:password])
-
     if @user
       session[:user_id] = @user.id
       flash[:success] = "You have been logged in!"
@@ -11,7 +10,6 @@ class SessionsController < ApplicationController
       flash[:error] = "Credentials Invalid!!"
       redirect_to root_path
     end
-
   end
 
   def destroy
