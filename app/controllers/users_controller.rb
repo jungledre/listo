@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @page = "bio"
     @user = current_user
+    @show_user = User.find_by_id(params[:id])
     # @score = default_score - @user.flakes.length
 
   end
