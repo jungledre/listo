@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Activity.destroy_all
+ActiveRecord::Base.connection.execute("TRUNCATE TABLE Activities RESTART IDENTITY")
 
 Activity.create([
   { name: 'Get Coffee', category_id: '4bf58dd8d48988d1e0931735' },
@@ -20,6 +20,6 @@ Activity.create([
   { name: 'Visit a Park', category_id: '4d4b7105d754a06377d81259' },
   { name: 'Record Shopping', category_id: '4bf58dd8d48988d10d951735' },
   { name: 'Watch a Movie', category_id: '4bf58dd8d48988d17f941735' },
-  { name: 'Shopping', category_id: ['4d4b7105d754a06378d81259','4bf58dd8d48988d103951735'] },
+  { name: 'Shopping', category_id: '4d4b7105d754a06378d81259, 4bf58dd8d48988d103951735' },
   { name: 'Bike Riding', category_id: '4bf58dd8d48988d163941735' }
   ])

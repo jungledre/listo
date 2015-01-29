@@ -10,7 +10,7 @@ $belize: rgba(41, 128, 185,1.0);
 
 /* == video background == */
 .video-wrapper {
-  background-color: belize;
+  background-color: $belize;
   width: 100%;
   height: 560px;
   z-index: -100;
