@@ -70,6 +70,7 @@ class UsersController < ApplicationController
     @page = "dashboard"
     @user = current_user
     @score = default_score - @user.flakes.length
+    @events = @user.events
   end
 
   def flag
