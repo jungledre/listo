@@ -15,7 +15,7 @@
 
   <div class="venue">
     <p class="subhead tk-bello-pro">Venue:</p>
-        <h3> <%= @venue_name %> </h3>
+        <h3 class="tk-brandon-grotesque"> <%= @venue_name %> </h3>
         <h4> <%= link_to @venue_location, @venue_map %>
   </div>
 </div>
@@ -24,7 +24,6 @@
   <p class="subhead tk-bello-pro">With who:</p>
   <div class="user-wrapper clearfix">
     <ul>
-     <%= @flaked.inspect %>
         <% @group.each do |user| %>
           <% if user != @current_user %>
             <li>

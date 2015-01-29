@@ -6,6 +6,7 @@ $offwhite: #ecf0f1;
 $darkpurple: #8e44ad;
 $halfpurple: rgba(142, 68, 173,.5);
 $belize: rgba(41, 128, 185,1.0);
+$darklink: #34495e;
 
 #event {
   .act-wrap {
@@ -72,6 +73,13 @@ $belize: rgba(41, 128, 185,1.0);
     @media screen and (max-width: 770px) {
       width: 50%;
 
+    }
+    h3 {
+      color: $offwhite;
+
+    }
+    a {
+      color: $darklink;
     }
   }
   .user-wrapper {
