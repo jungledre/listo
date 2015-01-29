@@ -9,9 +9,8 @@
       <%= image_tag image, class: "act-inner" %>
     </div>
   </div>
-
   <div class="flake-btn-wrapper clearfix">
-    <%= link_to 'FLAKE OUT', flake_path, class: "btn btn-danger" %>
+    <%= link_to 'FLAKE OUT', flake_path(@user.id), class: "btn btn-danger" %>
   </div>
 
   <div class="venue">
@@ -25,17 +24,18 @@
   <p class="subhead tk-bello-pro">With who:</p>
   <div class="user-wrapper clearfix">
     <ul>
+     <%= @flaked.inspect %>
         <% @group.each do |user| %>
           <% if user != @current_user %>
             <li>
             <% if !user.profile_img == nil  %>
-              # <%= cl_image_tag("user_" + user.id, :width => 100, :height => 100, :crop => :fill, :version => (user.id).updated_at.to_i) %>
+              <%= cl_image_tag("user_" + user.id, :width => 100, :height => 100, :crop => :fill, :version => (user.id).updated_at.to_i) %>
             <% else %>
               <%= image_tag('che3.png', id: "default-pic" ) %>
             <% end %>
             <% full_name = '<h3>' + user.first_name + " " + user.last_name + '</h3>' %>
             <%= link_to full_name.html_safe, user_path(user.id), class: "user-name" %>
-            <%= link_to 'Flaked?', flake_path, class: "btn btn-danger" %>
+            <%= link_to 'Flaked?', flake_path(flaked_id: user[:id]), method: :post,class: "btn btn-danger" %>
             </li>
           <% end %>
         <% end %>
