@@ -12,7 +12,7 @@ class EventsController < ApplicationController
     @group = event.users
     @activity = event.activity
     @venue_location = event.location
-    @venue_name = event.name
+    @venue_name = event.venue
     @venue_map = 'https://www.google.com/maps?q=' + @venue_name + ', ' + @venue_location
   end
 
