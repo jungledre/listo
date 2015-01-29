@@ -79,6 +79,7 @@ $belize: rgba(41, 128, 185,1.0);
   .bio, .form {
     float: left;
     text-align: center;
+    width: 100%;
     @media screen and (max-width: 770px) {
       width: 64%;
       padding-left: 20px;
