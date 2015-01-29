@@ -24,13 +24,16 @@ class EventsController < ApplicationController
   def flake
     @nark = current_user
     @flaked = params[:flaked_id]
-    @event = Event.find_by_id(params[:id])
+    @event = params[:id].to_i
 
+    puts @flaked
+    puts @event
     #if current user flakes id for event disable flakes
-    unless @nark.flakes.where({event_id: @event.id, flaked_id: @flaked}).any?
-      @event.flakes.create({flaked_id: @flaked, nark_id: @nark[:id]})
+    if @nark.narks.where({event_id: @event, flaked_id: @flaked}).length < 1
+      Event.find_by_id(@event).flakes.create({flaked_id: @flaked, nark_id: @nark[:id]})
+      redirect_to :back
     else
-      render dashboard_path
+      redirect_to :back
       ##send message to users alerting flake see faye
     end
 
