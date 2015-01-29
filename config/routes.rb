@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   post 'events' => 'events#create'
   get 'events/:id' => 'events#show'
-  post 'users/:id/flake' => 'events#flake', as: :flake
+  post 'events/:id/flake' => 'events#flake', as: :flake
 
   get 'messages' => 'messages#create'
   delete 'messages/:id' => 'messages#destroy'

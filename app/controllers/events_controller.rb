@@ -12,9 +12,10 @@ class EventsController < ApplicationController
     @group = @event.users
     @activity = @event.activity
 
-    location = @user.location
-    category_id = @activity.category_id
-    @venues = Foursquare.get_venues location, category_id
+    location = @user.location || "Seattle, WA"
+    category_id = @activity.category_id.split(",")
+    category = category_id.first || category_id.second || category_id.third
+    @venues = Foursquare.get_venues location, category
     @venue = @venues.sample
     @venue_name = @venue['name']
     @venue_location = @venue['location']['formattedAddress'].join(', ').gsub("&", "and") || ""
@@ -26,11 +27,16 @@ class EventsController < ApplicationController
     @flaked = params[:flaked_id]
     @event = Event.find_by_id(params[:id])
 
+    puts @flaked
+    puts @event
     #if current user flakes id for event disable flakes
-    unless @nark.flakes.where({event_id: @event.id, flaked_id: @flaked}).any?
-      @flaked.flakes << @event.flakes.create({flaked_id: @flaked, nark_id: @nark[:id]})
+    if @nark.narks.where({event_id: @event, flaked_id: @flaked}).length < 1
+      Event.find_by_id(@event).flakes.create({flaked_id: @flaked, nark_id: @nark[:id]})
+    elsif @nark.narks.where({event_id: @event, flaked_id: @nark_id}) > 0
+      @nark.events.clear
+      redirect_to activites_path
     else
-      render flash alert
+      redirect_to :back
       ##send message to users alerting flake see faye
     end
 

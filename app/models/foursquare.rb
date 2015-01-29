@@ -2,7 +2,7 @@ class Foursquare
   def self.get_venues location, category_id
     params = {  ll: Geocoder.coordinates(location).join(","),
                 categoryId: category_id,
-                radius: 1200,
+                radius: 1000,
                 openNow: '1',
                 price: '1,2'
                 }
