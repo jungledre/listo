@@ -36,7 +36,7 @@
             <% end %>
             <% full_name = '<h3>' + user.first_name + " " + user.last_name + '</h3>' %>
             <%= link_to full_name.html_safe, user_path(user.id), class: "user-name" %>
-            <%= link_to 'Flaked?', flake_path(flaked_id: user[:id]), method: :post,class: "btn btn-danger" %>
+            <%= link_to 'Flaked', flake_path(flaked_id: user[:id]), method: :post,class: "btn btn-danger" %>
             </li>
           <% end %>
         <% end %>
