@@ -33,9 +33,9 @@ class EventsController < ApplicationController
 
     #if current user flakes id for event disable flakes
     unless @nark.flakes.where({event_id: @event.id, flaked_id: @flaked}).any?
-      @flaked.flakes << @event.flakes.create({flaked_id: @flaked, nark_id: @nark[:id]})
+      @event.flakes.create({flaked_id: @flaked, nark_id: @nark[:id]})
     else
-      render flash alert
+      render dashboard_path
       ##send message to users alerting flake see faye
     end
 
