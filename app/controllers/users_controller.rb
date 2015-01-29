@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     @page = "bio"
     @user = current_user
     @show_user = User.find_by_id(params[:id])
-    @score = default_score - @show_user.flakes.length
   end
 
   def edit
@@ -69,8 +68,13 @@ class UsersController < ApplicationController
   def dashboard
     @page = "dashboard"
     @user = current_user
-    @score = default_score - @user.flakes.length
-    @events = @user.events
+  #   @score = (default_score - @show_user.flakes.length)+show_user.events.length
+  #   if @score > 10
+  #     @score = 10
+  #   elsif @score < 0
+  #     @score = 0
+  #   @score = default_score - @user.flakes.length
+  #   @events = @user.events
   end
 
   def flag
