@@ -76,11 +76,13 @@ header {
         a, .link{
           color: $darkpurple;
           //line-height: 100%;
+
           padding-top: 0;
           padding-bottom: 0;
         }
         a:hover{
           color: $darkpurple;
+          background: none;
         }
 
       }
