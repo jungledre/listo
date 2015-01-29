@@ -31,9 +31,9 @@ class EventsController < ApplicationController
     #if current user flakes id for event disable flakes
     if @nark.narks.where({event_id: @event, flaked_id: @flaked}).length < 1
       Event.find_by_id(@event).flakes.create({flaked_id: @flaked, nark_id: @nark[:id]})
-    elsif @nark.narks.where({event_id: @event, flaked_id: @nark_id}) > 0
+    elsif @nark.narks.where({event_id: @event, flaked_id: @nark_id}).length > 0
       @nark.events.clear
-      redirect_to activites_path
+      redirect_to dashboard_path
     else
       redirect_to :back
       ##send message to users alerting flake see faye
