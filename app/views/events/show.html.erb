@@ -19,6 +19,8 @@
         <%= link_to 'FLAKE OUT', flake_path(flaked_id: user[:id]), method: :post, class: "btn btn-danger" %>
       <% end %>
     <% end %>
+        <h3> <%= @venue_name %> </h3>
+        <h4> <%= link_to @venue_location, @venue_map %>
   </div>
 </div>
 

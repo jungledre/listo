@@ -32,7 +32,7 @@ $belize: rgba(41, 128, 185,1.0);
 header {
   width:100%;
   background: $offwhite;
-
+  z-index: 999;
   .branding {
     float: left;
     padding: 10px 0;
@@ -46,27 +46,52 @@ header {
       background-position: top center;
     }
   }
-  nav ul {
-    float: right;
-    list-style: none;
-    padding: 10px 0;
+  nav.navbar {
     margin: 0;
+    min-height: 40px;
+    .navbar-toggle {
+      color: $darkpurple;
+      margin: 0;
+    }
+    ul.navbar-nav {
+      float: right;
+      list-style: none;
+      padding: 10px 0;
+      margin: 0;
+      @media screen and (max-width: 770px) {
+        float:none;
+        text-align: center;
+        z-index: 99;
+      }
+      li {
+        //float: left;
+        padding: 0 20px ;
+        @media screen and (max-width: 770px) {
+          padding: inherit;
+        }
+        .link {
+          border: none;
+          background: none;
+        }
+        a, .link{
+          color: $darkpurple;
+          //line-height: 100%;
+
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+        a:hover{
+          color: $darkpurple;
+          background: none;
+        }
+
+      }
+
+    }
+
   }
-  nav ul > li {
-    float: left;
-    padding: 0 20px ;
-  }
-  .link {
-    border: none;
-    background: none;
-  }
-  a, .link{
-    color: $darkpurple;
-    line-height: 100%;
-  }
-  a:hover{
-    color: $darkpurple;
-  }
+
+
 } /* header */
 
 #home {
@@ -79,6 +104,7 @@ header {
     .branding {
       float: left;
       padding: 10px 0;
+      z-index: 100;
       a {
         display: block;
         width: 55px;
