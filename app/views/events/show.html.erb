@@ -1,7 +1,5 @@
 <section class="container">
 
-<% @test %>
-
 <h1 class="tk-brandon-grotesque"><%= @activity.name %></h1>
 
 <div class="col-sm-3 col-md-3 clearfix">
@@ -18,8 +16,7 @@
 
   <div class="venue">
     <p class="subhead tk-bello-pro">Venue:</p>
-        <h3><%= @venue_name %></h3>
-        <h4><%= link_to @venue_location, 'https://www.google.com/maps/place/' + @venue_location + ' seattle, wa' %></h4>
+        <h3> <%= @venue_name %> </h3>
   </div>
 </div>
 
@@ -46,9 +43,7 @@
 
   <p class="subhead tk-bello-pro">Chat:</p>
   <div class="chat-wrapper">
-
   </div>
 
 </div>
-
 </section>

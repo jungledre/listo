@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :is_event, only: [:dashboard]
+
   def new
   end
 
