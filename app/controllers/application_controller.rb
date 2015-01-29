@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     if @user.events.last
       @happening = false
       created_at = @user.events.last.created_at
-      if (Time.now - created_at).seconds < 60 #10800
+      if (Time.now - created_at).seconds < 10800
         @happening = true
       end
     end
