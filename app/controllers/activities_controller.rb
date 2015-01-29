@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
 
   before_action :is_authenticated?
+  before_action :is_event
 
   def index
     @page = "activities"

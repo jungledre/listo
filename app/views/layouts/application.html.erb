@@ -40,6 +40,8 @@
   </section>
 </header>
 
+
+
 <main>
 <%= yield %>
 </main>
@@ -67,6 +69,18 @@
   </section>
 
 </footer>
+
+
+<%if @user.events.last%>
+  <span id="event-user" style="display: none;"><%=@user.events.last.id%></span>
+<% end %>
+
+<% if @happening %>
+  <script>
+    eventAlert();
+  </script>
+<% end %>
+
 
 </body>
 </html>

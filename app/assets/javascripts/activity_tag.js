@@ -4,7 +4,6 @@ $(function(){
     var link = $(this);
     var url = link.attr('href');
     var userId = $('#current-user').html();
-    console.log(userId);
     $.post(url,function(data){
       if(data.joined){
         swal({
