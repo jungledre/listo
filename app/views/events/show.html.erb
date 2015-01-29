@@ -9,14 +9,18 @@
       <%= image_tag image, class: "act-inner" %>
     </div>
   </div>
-  <div class="flake-btn-wrapper clearfix">
-    <%= link_to 'FLAKE OUT', flake_path(@user.id), class: "btn btn-danger" %>
-  </div>
-
   <div class="venue">
     <p class="subhead tk-bello-pro">Venue:</p>
+        <h2> <%= @venue_name %> </h2>
+  </div>
+  <div class="flake-btn-wrapper clearfix">
+    <% @group.each do |user| %>
+      <% if user == @current_user %>
+        <%= link_to 'FLAKE OUT', flake_path(flaked_id: user[:id]), method: :post, class: "btn btn-danger" %>
+      <% end %>
+    <% end %>
         <h3> <%= @venue_name %> </h3>
-        <h4> <%= link_to @venue_location, @venue_map %>
+        <h4> <%= link_to @venue_location, @venue_map, target: '_blank' %>
   </div>
 </div>
 
@@ -34,7 +38,7 @@
             <% end %>
             <% full_name = '<h3>' + user.first_name + " " + user.last_name + '</h3>' %>
             <%= link_to full_name.html_safe, user_path(user.id), class: "user-name" %>
-            <%= link_to 'Flaked?', flake_path(flaked_id: user[:id]), method: :post,class: "btn btn-danger" %>
+            <%= link_to 'Flaked', flake_path(flaked_id: user[:id]), method: :post,class: "btn btn-danger" %>
             </li>
           <% end %>
         <% end %>
