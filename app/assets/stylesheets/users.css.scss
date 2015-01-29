@@ -104,7 +104,7 @@ $belize: rgba(41, 128, 185,1.0);
   .hide {
     display: none;
   }
-  .act_list {
+  .act-list {
     list-style: none;
     padding: 0;
       li {
@@ -116,8 +116,43 @@ $belize: rgba(41, 128, 185,1.0);
       }
 
   }
-
-
+  .event-list {
+    list-style: none;
+    padding: 0;
+    div {
+      width:20%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      border: 1px solid $offwhite;
+      overflow: hidden;
+      float: left;
+      img {
+        max-width: 100%;
+        height: auto
+      }
+    }
+    a {
+      color: #333;
+      .act {
+        border-radius: 50%;
+        width:20%;
+        margin-right: 2%;
+      }
+      .img-wrap {
+        margin-left: 2%;
+      }
+    }
+    .with {
+      width:10%;
+      border: none;
+      text-align: center;
+      padding-top: 7%;
+      span {
+        font-size: 20px;
+      }
+    }
+  }
 }
 //dashboard, bio
 #bio {
