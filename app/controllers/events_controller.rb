@@ -15,13 +15,15 @@ class EventsController < ApplicationController
     @activity = @event.activity
 
     location = @user.location
+    category_id = @activity.category_id
 
-    @test = @activity.name
-
-    @venues = Foursquare.get_venues location, 'coffee'
-    @venue = @venues[rand(0...@venues.length)]['venue']
+    @venues = Foursquare.get_venues location, ['4d4b7105d754a06378d81259', '4bf58dd8d48988d103951735']
+    @venue = @venues.sample
     @venue_name = @venue['name']
     @venue_location = @venue['location']['address']
+    puts @venue
+    # @venue_map = 'https://www.google.com/maps/place/' +@venue_name + ', ' +  @venue_location + ', Seattle, WA'
+
   end
 
   # def flake
