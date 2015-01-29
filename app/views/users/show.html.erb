@@ -17,8 +17,10 @@
 <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-4 clearfix">
   <div class="bio">
     <p class="subhead tk-bello-pro">Bio:</p>
-
     <p><%= @show_user.bio %></p>
+    <p class="subhead tk-bello-pro">Flake Score:</p>
+    <h1><%= @score %></h1>
+
 
   </div>
   <%= link_to "Report", flag_path, class: 'btn btn-danger' %>

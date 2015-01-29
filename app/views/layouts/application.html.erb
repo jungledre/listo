@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Listo - <%= @page %></title>
+  <title>Listo</title>
   <script src="//use.typekit.net/heh5evl.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
   <%= favicon_link_tag 'favicon.ico' %>
+  <%= iphone :icon, href: asset_path('favicon.ico', size: '60x60') %>
+  <%= iphone :viewport %>
+  <%= iphone :status_bar, color: 'black-translucent' %>
+  <link rel="apple-touch-startup-image" href="/public/che3.png">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -14,27 +18,38 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
 </head>
 <body id="<%= @page %>">
 
 <header>
   <section class="container">
-    <div class="branding">
-      <a href="/"></a>
 
-    </div>
 
-    <nav>
-      <ul>
-        <% if @user.id == nil  %> <!-- check if user is logged in -->
-          <li><button class="link" data-toggle="modal" data-target="#login-modal">Log In</button></li>
+    <nav class="navbar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#listo-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span>MENU</span>
+        </button>
+        <div class="branding">
+          <a href="/"></a>
+        </div>
+      </div>
 
-        <% else %>
-          <li><%= link_to 'Dashboard', dashboard_path(@user.id) %></li>
-          <li><%= link_to 'Activities', activities_path %></li>
-          <li><%= link_to 'Logout', logout_path %></li>
-        <% end %>
-      </ul>
+      <div class="collapse navbar-collapse" id="listo-nav">
+        <ul class="nav navbar-nav">
+          <% if @user.id == nil  %> <!-- check if user is logged in -->
+            <li><button class="link" data-toggle="modal" data-target="#login-modal">Log In</button></li>
+
+          <% else %>
+            <li><%= link_to 'Dashboard', dashboard_path(@user.id) %></li>
+            <li><%= link_to 'Activities', activities_path %></li>
+            <li><%= link_to 'Logout', logout_path %></li>
+          <% end %>
+        </ul>
+      </div>
     </nav>
 
   </section>
