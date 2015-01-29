@@ -19,7 +19,7 @@
     <p class="subhead tk-bello-pro">Bio:</p>
     <p><%= @show_user.bio %></p>
     <p class="subhead tk-bello-pro">Flake Score:</p>
-    <h1><%= @score %></h1>
+    <h1><%= @show_user.flake_score %></h1>
   </div>
   <%= link_to "Report", flag_path, class: 'btn btn-danger' %>
 </div>
