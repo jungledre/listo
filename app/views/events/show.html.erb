@@ -9,17 +9,18 @@
       <%= image_tag image, class: "act-inner" %>
     </div>
   </div>
-  <div class="venue">
-    <p class="subhead tk-bello-pro">Venue:</p>
-      <h3 class="tk-brandon-grotesque"> <%= @venue_name %> </h3>
-      <p> <%= link_to @venue_location, @venue_map, target: '_blank' %></p>
-  </div>
+
   <div class="flake-btn-wrapper clearfix">
     <% @group.each do |user| %>
       <% if user == @current_user %>
         <%= link_to 'FLAKE OUT', flake_path(flaked_id: user[:id]), method: :post, class: "btn btn-danger" %>
       <% end %>
     <% end %>
+  </div>
+  <div class="venue">
+    <p class="subhead tk-bello-pro">Venue:</p>
+      <h3 class="tk-brandon-grotesque"> <%= @venue_name %> </h3>
+      <p> <%= link_to @venue_location, @venue_map, target: '_blank' %></p>
   </div>
 </div>
 
