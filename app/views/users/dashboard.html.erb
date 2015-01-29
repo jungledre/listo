@@ -11,11 +11,13 @@
       <% else %>
       <%= image_tag('che3.png', id: "default-pic" ) %>
       <% end %>
+
     </div>
+    <h2 class="tk-brandon-grotesque"><%= @user.first_name %> <%= @user.last_name %></h2>
   </div>
 
 
-  <div class="bio">
+  <div class="bio clearfix">
   <%= link_to 'Edit Profile', '#', class: "toggle_edit btn btn-info" %>
     <p class="subhead tk-bello-pro">Bio:</p>
 
