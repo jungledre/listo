@@ -19,22 +19,31 @@
 
 <header>
   <section class="container">
-    <div class="branding">
-      <a href="/"></a>
 
-    </div>
 
-    <nav>
-      <ul>
-        <% if @user.id == nil  %> <!-- check if user is logged in -->
-          <li><button class="link" data-toggle="modal" data-target="#login-modal">Log In</button></li>
+    <nav class="navbar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#listo-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <span>MENU</span>
+        </button>
+        <div class="branding">
+          <a href="/"></a>
+        </div>
+      </div>
 
-        <% else %>
-          <li><%= link_to 'Dashboard', dashboard_path(@user.id) %></li>
-          <li><%= link_to 'Activities', activities_path %></li>
-          <li><%= link_to 'Logout', logout_path %></li>
-        <% end %>
-      </ul>
+      <div class="collapse navbar-collapse" id="listo-nav">
+        <ul class="nav navbar-nav">
+          <% if @user.id == nil  %> <!-- check if user is logged in -->
+            <li><button class="link" data-toggle="modal" data-target="#login-modal">Log In</button></li>
+
+          <% else %>
+            <li><%= link_to 'Dashboard', dashboard_path(@user.id) %></li>
+            <li><%= link_to 'Activities', activities_path %></li>
+            <li><%= link_to 'Logout', logout_path %></li>
+          <% end %>
+        </ul>
+      </div>
     </nav>
 
   </section>
