@@ -58,15 +58,16 @@ header {
       list-style: none;
       padding: 10px 0;
       margin: 0;
-      @media screen and (max-width: 770px) {
+      @media screen and (max-width: 767px) {
         float:none;
         text-align: center;
         z-index: 99;
       }
       li {
-        //float: left;
+        float: left;
         padding: 0 20px ;
-        @media screen and (max-width: 770px) {
+        @media screen and (max-width: 767px) {
+          float: none;
           padding: inherit;
         }
         .link {
