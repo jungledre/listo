@@ -23,7 +23,6 @@ $darklink: #34495e;
       float: none;
       margin: 0 auto;
     }
-
     .act-box {
       position: relative;
       float: left;
@@ -72,7 +71,6 @@ $darklink: #34495e;
     float: left;
     @media screen and (max-width: 770px) {
       width: 50%;
-
     }
     p.subhead {
       margin-bottom: 0;
@@ -80,7 +78,6 @@ $darklink: #34495e;
     h3 {
       color: $offwhite;
       margin-top: 0;
-
     }
     a {
       color: $darklink;
@@ -114,7 +111,6 @@ $darklink: #34495e;
           float: left;
           color: $offwhite;
           text-decoration: none;
-
           padding: 15px 20px 0 10px;
           @media screen and (max-width: 516px) {
             float: none;
@@ -131,6 +127,12 @@ $darklink: #34495e;
               font-size: 6vw;
             }
           }
+          span.score {
+            display: block;
+            float: right;
+            margin-top: 30px;
+            width: 8%;
+          }
         }
         .btn {
           margin-top: 30px;
@@ -145,7 +147,4 @@ $darklink: #34495e;
       }
     }
   }
-
-
-
 } /* #event */
