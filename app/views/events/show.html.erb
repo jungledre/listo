@@ -39,7 +39,7 @@
             <% end %>
             <% full_name = '<h3>' + user.first_name + " " + user.last_name + '</h3>' %>
             <%= link_to full_name.html_safe, user_path(user.id), class: "user-name" %>
-            <p class="score"><%= user.flake_score %>%</p>
+            <span class="score"><%= user.flake_score %>%</span>
             <%= link_to 'Flaked', flake_path(flaked_id: user[:id]), method: :post,class: "btn btn-danger" %>
             </li>
           <% end %>
@@ -49,6 +49,19 @@
 
   <p class="subhead tk-bello-pro">Chat:</p>
   <div class="chat-wrapper">
+
+    <ul id="chat">
+      <%= render @messages %>
+    </ul>
+
+    <%= form_for Message.new, remote: true do |f| %>
+    <%= f.hidden_field :event_id, value: @event.id %>
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.text_field :body %>
+    <%= f.submit "Send" %>
+    <% end %>
+
+    <%= subscribe_to "/messages/event_#{@event.id}" %>
   </div>
 
 </div>

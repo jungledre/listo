@@ -41,7 +41,7 @@
     <p class="subhead tk-bello-pro">Waiting to go:</p>
     <ul class="act-list clearfix">
     <% @user.activities.each do |act| %>
-      <li><%= act.name %> <%= link_to 'x', '/delete_activity', {title: "delete", class: ""} %> </li>
+      <li> <%= act.name %> </li>
     <% end %>
     </ul>
   <% end %>
