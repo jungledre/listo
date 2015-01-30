@@ -7,8 +7,32 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= iphone :icon, href: asset_path('listo-mobile-icon.png') %>
   <%= iphone :viewport %>
-  <%= iphone :status_bar, color: 'black-translucent' %>
+  <%= iphone :status_bar, color: 'default' %>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="apple-touch-startup-image" href="/public/che3.png">
+  <script type="text/javascript">
+  if(("standalone" in window.navigator) && window.navigator.standalone){
+
+  var noddy, remotes = false;
+
+  document.addEventListener('click', function(event) {
+
+  noddy = event.target;
+
+  while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+  noddy = noddy.parentNode;
+  }
+
+  if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+  {
+  event.preventDefault();
+  document.location.href = noddy.href;
+  }
+
+  },false);
+  }
+  </script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -95,7 +119,6 @@
     eventAlert();
   </script>
 <% end %>
-
 
 </body>
 </html>
