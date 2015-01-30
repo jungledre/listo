@@ -20,5 +20,5 @@ var profile_pic = function(){
 var fadeOutAlerts = function() {
   setTimeout(function(){
     $('.alert').fadeOut(500);
-  }, 5000);
+  }, 3000);
 }
