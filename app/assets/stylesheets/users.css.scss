@@ -81,7 +81,7 @@ $belize: rgba(41, 128, 185,1.0);
       padding-left: 20px;
       text-align: left;
     }
-    a {
+    .btn {
       color: #34495e;
       display: inline-block;
       //width: 100%;
@@ -97,6 +97,9 @@ $belize: rgba(41, 128, 185,1.0);
     }
   }
   .flake {
+    @media screen and (max-width: 578px) {
+      padding-left: 0;
+    }
     p.subhead {
       margin-bottom: 0;
     }
@@ -143,6 +146,8 @@ $belize: rgba(41, 128, 185,1.0);
     a {
       color: #333;
       .act {
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
         border-radius: 50%;
         width:20%;
         margin-right: 2%;
@@ -156,8 +161,14 @@ $belize: rgba(41, 128, 185,1.0);
       border: none;
       text-align: center;
       padding-top: 7%;
+      -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
       span {
         font-size: 20px;
+        @media screen and (max-width: 500px) {
+          font-size: 3vw;
+        }
       }
     }
   }
