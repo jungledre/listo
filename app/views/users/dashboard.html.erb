@@ -12,29 +12,27 @@
       <% end %>
     </div>
   </div>
-  <h2 class="tk-brandon-grotesque name"><%= @user.first_name %> <%= @user.last_name %></h2>
 
+  <h2 class="tk-brandon-grotesque name"><%= @user.first_name %> <%= @user.last_name %></h2>
 
   <div class="bio clearfix">
   <%= link_to 'Edit Profile', '#', class: "toggle_edit btn alert-info" %>
     <p class="subhead tk-bello-pro">Bio:</p>
     <p><%= @current_user.bio %></p>
-    <p class="subhead tk-bello-pro">Flake Score:</p>
-    <h1><%= @score %></h1>
-
   </div>
 
   <div class="form hide">
-    <!-- server upload -->
     <%= bootstrap_form_for @user do |f| %>
       <%= f.file_field :image, hide_label: :true, class: "" %>
       <%= f.text_area :bio, hide_label: :true %>
       <%= f.submit 'Update'%>
     <% end %>
-
-     <!-- for direct upload  -->
   </div>
 
+  <div class="flake clearfix">
+    <p class="subhead tk-bello-pro">Flake Score:</p>
+    <p class="score"><%= @score %></p>
+  </div>
 
 </div>
 
@@ -46,7 +44,6 @@
     <p class="subhead tk-bello-pro">Waiting to go:</p>
     <ul class="act-list clearfix">
     <% @user.activities.each do |act| %>
-
       <li><%= act.name %> <%= link_to 'x', '/delete_activity', {title: "delete", class: ""} %> </li>
     <% end %>
     </ul>
@@ -57,7 +54,6 @@
 
   <ul class="event-list">
     <% @events.each do |event| %>
-
         <li>
           <% activity = event.activity_id.to_s + '.svg' %>
           <a href="/events/<%= event.id %>">
@@ -82,7 +78,6 @@
       </a>
     <% end %>
   </ul>
-
 
 </div>
 
