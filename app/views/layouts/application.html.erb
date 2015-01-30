@@ -6,16 +6,16 @@
   <script>try{Typekit.load();}catch(e){}</script>
   <%= favicon_link_tag 'favicon.ico' %>
   <%= iphone :icon, href: asset_path('listo-mobile-icon.png') %>
+  <%= iphone :splash, href: asset_path('listo-mobile-splash.png') %>
   <%= iphone :viewport %>
   <%= iphone :status_bar, color: 'default' %>
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="apple-touch-startup-image" href="/listo-mobile-splash.png">
-  <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
   <meta charset="utf-8">
@@ -99,5 +99,11 @@
   </script>
 <% end %>
 
+  <script>
+
+
+
+
+  </script>
 </body>
 </html>
