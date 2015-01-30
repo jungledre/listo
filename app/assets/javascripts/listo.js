@@ -1,6 +1,8 @@
 
 $(function(){
 
+  fadeOutAlerts();
+
 });
 //Cloudinary Preview Future Release
 var profile_pic = function(){
@@ -13,4 +15,10 @@ var profile_pic = function(){
     $('.image_public_id').val(data.result.public_id);
     return true;
   });
+}
+
+var fadeOutAlerts = function() {
+  setTimeout(function(){
+    $('.alert').fadeOut(500);
+  }, 5000);
 }
