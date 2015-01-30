@@ -130,17 +130,20 @@ $belize: rgba(41, 128, 185,1.0);
   .event-list {
     list-style: none;
     padding: 0;
-    div {
-      width:20%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
-      border: 1px solid $offwhite;
-      overflow: hidden;
-      float: left;
-      img {
-        max-width: 100%;
-        height: auto
+    li {
+      padding: 10px 0;
+      div {
+        width:20%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 1px solid $offwhite;
+        overflow: hidden;
+        float: left;
+        img {
+          max-width: 100%;
+          height: auto
+        }
       }
     }
     a {

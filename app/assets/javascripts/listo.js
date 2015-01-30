@@ -1,7 +1,7 @@
+
 $(function(){
-//Prevent Default new page safari mobile
 
-
+});
 //Cloudinary Preview Future Release
 var profile_pic = function(){
   $('.cloudinary-fileupload').bind('cloudinarydone', function(e, data) {

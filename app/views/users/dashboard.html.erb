@@ -36,9 +36,6 @@
 
 </div>
 
-
-
-
 <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
   <% if @user.activities.any?  %>
     <p class="subhead tk-bello-pro">Waiting to go:</p>
@@ -49,12 +46,11 @@
     </ul>
   <% end %>
 
-
   <p class="subhead tk-bello-pro">Events:</p>
 
   <ul class="event-list">
     <% @events.each do |event| %>
-        <li>
+        <li class="clearfix">
           <% activity = event.activity_id.to_s + '.svg' %>
           <a href="/events/<%= event.id %>">
             <div class="act"><%= image_tag activity, class: "event_act" %></div>
@@ -80,6 +76,5 @@
   </ul>
 
 </div>
-
 
 </section>
