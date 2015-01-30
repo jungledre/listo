@@ -89,10 +89,13 @@ $darklink: #34495e;
       list-style: none;
       padding: 0;
       li {
-        padding: 10px 0 40px;
+        padding: 10px 0;
         float: left;
         width: 100%;
         line-height: 100%;
+        @media screen and (max-width: 516px) {
+          padding: 10px 0 40px;
+        }
         img {
           border-radius: 50%;
           margin-right: 10px;
