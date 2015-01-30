@@ -90,6 +90,8 @@
   <span id="event-user" style="display: none;"><%=@user.events.last.id%></span>
 <% end %>
 
+<span id="event-happening" style="display:none;"><%= @happening %></span>
+
 <% if @happening %>
   <script>
     eventAlert();

@@ -19,6 +19,7 @@ class EventsController < ApplicationController
     @venue_name = @venue['name']
     @venue_location = @venue['location']['formattedAddress'].join(', ').gsub("&", "and") || ""
     @venue_map = 'https://www.google.com/maps?q=' + @venue_name + ', ' +  @venue_location
+    @messages = @event.messages
   end
 
   def flake
