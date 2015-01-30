@@ -1,5 +1,5 @@
 <% publish_to "/messages/event_#{@message.event_id}" do %>
-  $("#chat").append("<%= j render(@message) %>");
+  $("#chat").append("<%= j render(@message) %>").scrollTop(99999);
 <% end %>
 $("#new_message")[0].reset();
 $("#chat").scrollTop(99999);
