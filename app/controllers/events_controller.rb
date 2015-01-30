@@ -6,20 +6,14 @@ class EventsController < ApplicationController
   end
 
   def show
-    @page = "event"
+    @page = 'event'
     @user = current_user
-    @event = Event.find_by_id(params[:id])
-    @group = @event.users
-    @activity = @event.activity
-
-    location = @user.location || "Seattle, WA"
-    category_id = @activity.category_id.split(",")
-    category = category_id.first || category_id.second || category_id.third
-    @venues = Foursquare.get_venues location, category
-    @venue = @venues.sample
-    @venue_name = @venue['name']
-    @venue_location = @venue['location']['formattedAddress'].join(', ').gsub("&", "and") || ""
-    @venue_map = 'https://www.google.com/maps?q=' + @venue_name + ', ' +  @venue_location
+    event = Event.find_by_id(params[:id])
+    @group = event.users
+    @activity = event.activity
+    @venue_location = event.location
+    @venue_name = event.venue
+    @venue_map = 'https://www.google.com/maps?q=' + @venue_name + ', ' + @venue_location
   end
 
   def flake
