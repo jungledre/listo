@@ -147,4 +147,19 @@ $darklink: #34495e;
       }
     }
   }
+  #chat{
+    margin:0;
+    padding:0;
+    list-style: none;
+    height: 200px;
+    overflow-y: scroll;
+    background: white;
+  }
+  #chat li{
+    padding: 2px 2px 2px 4px;
+    margin: 0;
+  }
+  #chat li:nth-child(odd){
+    background: #EEEEEE;
+  }
 } /* #event */
