@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
     if score.nan?
       score = 0
     end
-    score
+    score.to_i
   end
 
 
