@@ -34,5 +34,22 @@ class User < ActiveRecord::Base
     User.find_by_email(email).try(:authenticate, password)
   end
 
+  def flake_score
+    self_flakes = self.flakes.where({nark_id: self.id}).length.to_f
+    #groups by event... retuns hash of counts for each event_id
+    other_flakes = self.flakes.where.not({nark_id: self.id}).group(:event_id).count.length.to_f
+    event_count = self.events.length.to_f
+
+    puts self_flakes
+    puts other_flakes
+    puts event_count
+
+    score = (((other_flakes + (self_flakes/2))/(event_count+self_flakes))*100)
+    if score.nan?
+      score = 0
+    end
+    score.to_i
+  end
+
 
 end

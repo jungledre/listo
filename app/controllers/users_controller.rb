@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @page = "bio"
     @user = current_user
     @show_user = User.find_by_id(params[:id])
-    @score = default_score - @show_user.flakes.length
+    @score = @show_user.flake_score
   end
 
   def edit
@@ -69,7 +69,12 @@ class UsersController < ApplicationController
   def dashboard
     @page = "dashboard"
     @user = current_user
-    @score = default_score - @user.flakes.length
+    @score = @user.flake_score
+    @events = @user.events
+    if @user.id.to_s != params[:id].to_s
+      redirect_to root_path
+    end
+
   end
 
   def flag

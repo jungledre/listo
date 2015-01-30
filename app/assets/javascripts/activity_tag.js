@@ -8,18 +8,17 @@ $(function(){
       if(data.joined){
         swal({
           title: 'You selected ' + data.activity.name,
-          text: 'Do you want to continue picking actvities or go to your dashboard?',
+          text: 'Do you want to continue picking activities or go to your dashboard?',
           type: 'success',
           showCancelButton: 'true',
           confirmButtonText: 'Go to Dashboard',
-          cancelButtonText: 'Continue picking actvities'
+          cancelButtonText: 'Continue'
         },
         function(isConfirm){
           if (isConfirm) {
             location.href = '/users/'+userId+'/dashboard';
           }
         });
-        //location.href="/"
       }else{
         swal({
           title: 'Already selected this activity',

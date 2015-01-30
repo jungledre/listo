@@ -6,6 +6,7 @@ $offwhite: #ecf0f1;
 $darkpurple: #8e44ad;
 $halfpurple: rgba(142, 68, 173,.5);
 $belize: rgba(41, 128, 185,1.0);
+$darklink: #34495e;
 
 #event {
   .act-wrap {
@@ -22,7 +23,6 @@ $belize: rgba(41, 128, 185,1.0);
       float: none;
       margin: 0 auto;
     }
-
     .act-box {
       position: relative;
       float: left;
@@ -71,7 +71,16 @@ $belize: rgba(41, 128, 185,1.0);
     float: left;
     @media screen and (max-width: 770px) {
       width: 50%;
-
+    }
+    p.subhead {
+      margin-bottom: 0;
+    }
+    h3 {
+      color: $offwhite;
+      margin-top: 0;
+    }
+    a {
+      color: $darklink;
     }
   }
   .user-wrapper {
@@ -102,7 +111,6 @@ $belize: rgba(41, 128, 185,1.0);
           float: left;
           color: $offwhite;
           text-decoration: none;
-
           padding: 15px 20px 0 10px;
           @media screen and (max-width: 516px) {
             float: none;
@@ -119,6 +127,12 @@ $belize: rgba(41, 128, 185,1.0);
               font-size: 6vw;
             }
           }
+          span.score {
+            display: block;
+            float: right;
+            margin-top: 30px;
+            width: 8%;
+          }
         }
         .btn {
           margin-top: 30px;
@@ -133,7 +147,6 @@ $belize: rgba(41, 128, 185,1.0);
       }
     }
   }
-
   #chat{
     margin:0;
     padding:0;
@@ -149,8 +162,4 @@ $belize: rgba(41, 128, 185,1.0);
   #chat li:nth-child(odd){
     background: #EEEEEE;
   }
-
-
-
-
 } /* #event */

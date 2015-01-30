@@ -12,50 +12,69 @@
       <% end %>
     </div>
   </div>
-  <h2 class="tk-brandon-grotesque name"><%= @user.first_name %> <%= @user.last_name %></h2>
 
+  <h2 class="tk-brandon-grotesque name"><%= @user.first_name %> <%= @user.last_name %></h2>
 
   <div class="bio clearfix">
   <%= link_to 'Edit Profile', '#', class: "toggle_edit btn alert-info" %>
     <p class="subhead tk-bello-pro">Bio:</p>
     <p><%= @current_user.bio %></p>
-    <p class="subhead tk-bello-pro">Flake Score:</p>
-    <h1><%= @score %></h1>
-
   </div>
 
   <div class="form hide">
-    <!-- server upload -->
     <%= bootstrap_form_for @user do |f| %>
       <%= f.file_field :image, hide_label: :true, class: "" %>
       <%= f.text_area :bio, hide_label: :true %>
       <%= f.submit 'Update'%>
     <% end %>
-
-     <!-- for direct upload  -->
   </div>
 
+  <div class="flake clearfix">
+    <p class="subhead tk-bello-pro">Flake Score:</p>
+    <p class="score"><%= @score %>%</p>
+  </div>
 
 </div>
-
-
-
 
 <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
   <% if @user.activities.any?  %>
     <p class="subhead tk-bello-pro">Waiting to go:</p>
-    <ul class="act_list clearfix">
+    <ul class="act-list clearfix">
     <% @user.activities.each do |act| %>
-
-      <li><%= act.name %> <%= link_to 'x', '/delete_activity', {title: "delete", class: ""} %> </li>
+      <li> <%= act.name %> </li>
     <% end %>
     </ul>
   <% end %>
 
-
   <p class="subhead tk-bello-pro">Events:</p>
 
-</div>
+  <ul class="event-list">
+    <% @events.each do |event| %>
+        <li class="clearfix">
+          <% activity = event.activity_id.to_s + '.svg' %>
+          <a href="/events/<%= event.id %>">
+            <div class="act"><%= image_tag activity, class: "event_act" %></div>
+          </a>
+          <div class="with"><span>with</span></div>
+          <% event.users.each do |user| %>
+            <% if user != @user %>
+              <a href="/users/<%= user.id %>">
+                <div class="img-wrap">
+                  <% if user.profile_img %>
+                    <% image = 'user_'+user.id.to_s %>
+                    <%= cl_image_tag(image, :width => 100, :height => 100, :crop => :fill, :version => user.updated_at.to_i) %>
+                  <% else %>
+                    <%= image_tag('che3.png', id: "default-pic" ) %>
+                  <% end %>
+                </div>
+              </a>
+            <% end %>
+          <% end %>
+        </li>
+      </a>
+    <% end %>
+  </ul>
 
+</div>
 
 </section>

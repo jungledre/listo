@@ -5,10 +5,13 @@
   <script src="//use.typekit.net/heh5evl.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
   <%= favicon_link_tag 'favicon.ico' %>
-  <%= iphone :icon, href: asset_path('favicon.ico', size: '60x60') %>
+  <%= iphone :icon, href: asset_path('listo-mobile-icon.png') %>
   <%= iphone :viewport %>
-  <%= iphone :status_bar, color: 'black-translucent' %>
-  <link rel="apple-touch-startup-image" href="/public/che3.png">
+  <%= iphone :status_bar, color: 'default' %>
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-startup-image" href="/listo-mobile-splash.png">
+  <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -97,7 +100,6 @@
     eventAlert();
   </script>
 <% end %>
-
 
 </body>
 </html>
