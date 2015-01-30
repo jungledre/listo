@@ -42,8 +42,7 @@ class UsersController < ApplicationController
 
     if params[:user][:bio]
       @user.update_attributes!({
-        :bio => params[:user][:bio],
-        :location => params[:user][:location]
+        :bio => params[:user][:bio]
       })
       redirect_to dashboard_path
       # render json: @user
