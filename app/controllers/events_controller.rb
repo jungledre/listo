@@ -8,11 +8,11 @@ class EventsController < ApplicationController
   def show
     @page = 'event'
     @user = current_user
-    event = Event.find_by_id(params[:id])
-    @group = event.users
-    @activity = event.activity
-    @venue_location = event.location
-    @venue_name = event.venue
+    @event = Event.find_by_id(params[:id])
+    @group = @event.users
+    @activity = @event.activity
+    @venue_location = @event.location
+    @venue_name = @event.venue
     @venue_map = 'https://www.google.com/maps?q=' + @venue_name + ', ' + @venue_location
     @messages = @event.messages
   end
