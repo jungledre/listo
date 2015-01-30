@@ -127,11 +127,19 @@ $darklink: #34495e;
               font-size: 6vw;
             }
           }
-          span.score {
+        }
+        span.score {
+          display: block;
+          float: right;
+          margin-top: 30px;
+          padding: 12px;
+          text-align: center;
+          font-size: 20px;
+          @media screen and (max-width: 516px) {
+            float: none;
             display: block;
-            float: right;
-            margin-top: 30px;
-            width: 8%;
+            width: auto;
+            margin: 0 auto;
           }
         }
         .btn {
