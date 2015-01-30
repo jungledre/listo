@@ -27,5 +27,5 @@ Rails.application.routes.draw do
   get 'activities' => 'activities#index'
   post 'activities/join/:activity_id' => 'activities#add_activity', as: :add_activity
 
-  get '*path' => redirect('/')
+  get '*path' => redirect('/404.html')
 end

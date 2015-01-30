@@ -71,6 +71,10 @@ class UsersController < ApplicationController
     @user = current_user
     @score = @user.flake_score
     @events = @user.events
+    if @user.id.to_s != params[:id].to_s
+      redirect_to root_path
+    end
+
   end
 
   def flag

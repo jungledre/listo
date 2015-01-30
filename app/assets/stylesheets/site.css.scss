@@ -204,7 +204,15 @@ header {
   }
 }
 
-
+#fourofour {
+  h1 {
+    font-size: 4vw;
+    line-height: 130%;
+    @media screen and (max-width: 770px) {
+      font-size: 8vw;
+    }
+  }
+}
 
 
 
