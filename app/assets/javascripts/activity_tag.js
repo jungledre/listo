@@ -19,7 +19,6 @@ $(function(){
             location.href = '/users/'+userId+'/dashboard';
           }
         });
-        //location.href="/"
       }else{
         swal({
           title: 'Already selected this activity',

@@ -54,7 +54,7 @@
 
   <ul class="event-list">
     <% @events.each do |event| %>
-        <li>
+        <li class="clearfix">
           <% activity = event.activity_id.to_s + '.svg' %>
           <a href="/events/<%= event.id %>">
             <div class="act"><%= image_tag activity, class: "event_act" %></div>
