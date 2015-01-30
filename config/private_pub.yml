@@ -1,12 +1,12 @@
 development:
   server_local: "http://localhost:9292/faye"
   secret_token_local: "secret"
-  server: "http://pubserver.herokuapp.com/faye"
+  server: "https://pubserver.herokuapp.com/faye"
   secret_token: <%= ENV['PRIVATE_PUB'] %>
 test:
-  server: "http://pubserver.herokuapp.com/faye"
+  server: "https://pubserver.herokuapp.com/faye"
   secret_token: <%= ENV['PRIVATE_PUB'] %>
 production:
-  server: "http://pubserver.herokuapp.com/faye"
+  server: "https://pubserver.herokuapp.com/faye"
   secret_token: <%= ENV['PRIVATE_PUB'] %>
   signature_expiration: 86400 # one hour
