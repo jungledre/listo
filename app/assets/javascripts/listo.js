@@ -1,5 +1,7 @@
-// $(function(){
-// //Prevent Default new page safari mobile
+
+$(function(){
+
+//Prevent Default new page safari mobile
 // var a=document.getElementsByTagName("a");
 // for(var i=0;i<a.length;i++)
 // {
@@ -10,7 +12,7 @@
 //     }
 // }
 
-// });
+});
 
 //Cloudinary Preview Future Release
 var profile_pic = function(){
