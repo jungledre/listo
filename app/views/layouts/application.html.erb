@@ -11,28 +11,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="apple-touch-startup-image" href="/listo-mobile-splash.png">
-  <script type="text/javascript">
-  if(("standalone" in window.navigator) && window.navigator.standalone){
-
-  var noddy, remotes = false;
-
-  document.addEventListener('click', function(event) {
-
-  noddy = event.target;
-
-  while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-  noddy = noddy.parentNode;
-  }
-
-  if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
-  {
-  event.preventDefault();
-  document.location.href = noddy.href;
-  }
-
-  },false);
-  }
-  </script>
+  <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>

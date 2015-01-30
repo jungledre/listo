@@ -44,9 +44,9 @@ class User < ActiveRecord::Base
     puts other_flakes
     puts event_count
 
-    score = 10-(((other_flakes + (self_flakes/2))/(event_count+self_flakes))*10)
+    score = (((other_flakes + (self_flakes/2))/(event_count+self_flakes))*100)
     if score.nan?
-      score = 10
+      score = 0
     end
     score
   end
