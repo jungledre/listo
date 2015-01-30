@@ -70,6 +70,7 @@ class UsersController < ApplicationController
     @page = "dashboard"
     @user = current_user
     @score = @user.flake_score
+    @events = @user.events
   end
 
   def flag
