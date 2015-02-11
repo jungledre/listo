@@ -128,11 +128,11 @@ header {
   }
   main {
     background: none;
-    padding-top: 0;
+    padding: 0;
     .intro-wrapper {
       color: $offwhite;
       padding-top: 100px;
-      height: 560px;
+      height: 520px;
       @media screen and (max-width: 770px) {
         color: $offwhite;
         height: 360px;
@@ -179,6 +179,8 @@ header {
       }
     }
     .content {
+      background-color: #fff;
+      padding: 40px 0;
       h2 {
         color: $halfpurple;
       }

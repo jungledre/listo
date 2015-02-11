@@ -5,30 +5,34 @@
   <div class="learn-more"></div>
 </div>
 
-<section class="container content-wrapper">
-<%= render partial: "partials/flash" %>
+<section class="content-wrapper">
 
-  <div class="row intro-wrapper text-center">
-    <div class="col-md-10 col-md-offset-1">
-      <h1 class="tk-brandon-grotesque">ARE YOU READY?</h1>
-      <p>Join others in your neighborhood for activites around town.</p>
-      <% if @user.id == nil %> <!-- show signup button if not logged in -->
-        <button class="btn" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
-      <% else %>
-        <%= link_to 'Get Started', activities_path, class: "btn" %>
-      <% end %>
+  <div class="intro-wrapper text-center">
+    <div class="container">
+      <%= render partial: "partials/flash" %>
+      <div class="col-md-10 col-md-offset-1">
+        <h1 class="tk-brandon-grotesque">ARE YOU READY?</h1>
+        <p>Join others in your neighborhood for activites around town.</p>
+        <% if @user.id == nil %> <!-- show signup button if not logged in -->
+          <button class="btn" data-toggle="modal" data-target="#signup-modal">Sign Up</button>
+        <% else %>
+          <%= link_to 'Get Started', activities_path, class: "btn" %>
+        <% end %>
+      </div>
     </div>
   </div>
 
-  <div class="row content">
-    <div class='hidden-xs col-sm-5 col-md-6 col-lg-offset-1'>
-      <%= image_tag 'meeting.jpg' %>
-    </div>
-    <div class='col-xs-12 col-sm-7 col-md-5 col-lg-4 content-text'>
-      <h2 class="tk-brandon-grotesque">Are you here for Listo?</h2>
-        <p>Listo is an app that lets you meet new people with shared interests and activities all at the simple click of a button.</p>
-      <h2 class="tk-brandon-grotesque">The Flake Score</h2>
-        <p>Also there is an added feature that rates users on their event attendance known as the "Flake Score". The more you attend events the lower your flake score percentage. For exampe: If you flake from all of your events your flake score will be 100%, but if you are added to 10 events and only make 9 of them your flake score will be 10%. All of this is so you can count on other users to show up and have a great time.</p>
+  <div class="content">
+    <div class="container">
+      <div class='hidden-xs col-sm-5 col-md-6 col-lg-offset-1'>
+        <%= image_tag 'meeting.jpg' %>
+      </div>
+      <div class='col-xs-12 col-sm-7 col-md-5 col-lg-4 content-text'>
+        <h2 class="tk-brandon-grotesque">Are you here for Listo?</h2>
+          <p>Listo is an app that lets you meet new people with shared interests and activities all at the simple click of a button.</p>
+        <h2 class="tk-brandon-grotesque">The Flake Score</h2>
+          <p>Also there is an added feature that rates users on their event attendance known as the "Flake Score". The more you attend events the lower your flake score percentage. For exampe: If you flake from all of your events your flake score will be 100%, but if you are added to 10 events and only make 9 of them your flake score will be 10%. All of this is so you can count on other users to show up and have a great time.</p>
+      </div>
     </div>
   </div>
 
