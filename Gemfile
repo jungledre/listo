@@ -42,6 +42,8 @@ gem "private_pub"
 gem "thin"
 
 gem "faye-websocket"
+
+gem 'newrelic_rpm'
 # Use unicorn as the app server
 # gem 'unicorn'
 
