@@ -6,7 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-ActiveRecord::Base.connection.execute("TRUNCATE TABLE Activities RESTART IDENTITY")
+ActiveRecord::Base.connection.execute('TRUNCATE TABLE Activities RESTART IDENTITY')
+ActiveRecord::Base.connection.execute('TRUNCATE TABLE Users RESTART IDENTITY')
+ActiveRecord::Base.connection.execute('TRUNCATE TABLE Activities_users RESTART IDENTITY')
+
 
 Activity.create([
   { name: 'Get Coffee', category_id: '4bf58dd8d48988d1e0931735,4bf58dd8d48988d16d941735,4bf58dd8d48988d147941735' },
@@ -23,3 +26,43 @@ Activity.create([
   { name: 'Shopping', category_id: '4bf58dd8d48988d103951735,4bf58dd8d48988d128951735,4d4b7105d754a06378d81259' },
   { name: 'Bike Riding', category_id: '4bf58dd8d48988d163941735,4bf58dd8d48988d12f941735,4d4b7105d754a06377d81259' }
   ])
+
+User.create([
+  { first_name:'Viggo',
+    last_name:'Mortensen',
+    email:'Viggo@gmail.com',
+    password:'listowdi',
+    password_confirmation:'listowdi',
+    bio:'Heyyyy',
+    location:'Pioneer Square, Seattle, WA'},
+
+  { first_name:'Liv',
+    last_name:'Tyler',
+    email:'Liv@gmail.com',
+    password:'listowdi',
+    password_confirmation:'listowdi',
+    bio:'From the ashes, a fire shall be woken. A light from the shadow shall spring.',
+    location:'Pioneer Square, Seattle, WA'},
+
+  { first_name:'Elijah',
+    last_name:'Wood',
+    email:'Elijah@gmail.com',
+    password:'listowdi',
+    password_confirmation:'listowdi',
+    bio:'I wish the Ring had never come to me. I wish none of this had happened.',
+    location:'Pioneer Square, Seattle, WA'},
+
+  { first_name:'Orlando',
+    last_name:'Bloom',
+    email:'Orlando@gmail.com',
+    password:'listowdi',
+    password_confirmation:'listowdi',
+    bio:'What\'s Up, Seattle',
+    location:'Pioneer Square, Seattle, WA'}
+])
+
+activity = Activity.find_by_id 2
+
+User.first.activities << activity
+User.second.activities << activity
+User.third.activities << activity
